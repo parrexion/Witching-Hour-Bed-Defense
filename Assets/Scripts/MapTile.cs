@@ -5,8 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class MapTile {
 
+	public System.Action<Building> onBuildingChanged;
 	public int x, y;
+	public Building currentBuilding;
 	[System.NonSerialized] public MapTile[] neighbours = new MapTile[4];
+
+	public bool Blocked => currentBuilding != null;
 
 
 	public MapTile (int x, int y) {
@@ -21,5 +25,10 @@ public class MapTile {
 	public void AddNeighbour(Direction dir, MapTile otherTile) {
 		neighbours[(int)dir] = otherTile;
 		otherTile.neighbours[(int)dir.Opposite()] = this;
+	}
+
+	public void AddBuilding(Building building) {
+		currentBuilding = building;
+		onBuildingChanged?.Invoke(building);
 	}
 }
