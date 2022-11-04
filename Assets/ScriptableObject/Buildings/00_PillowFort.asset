@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c858a0e9dc8c4ad4883dac13e7ef04cc, type: 3}
+  m_Name: 00_PillowFort
+  m_EditorClassIdentifier: 
+  label: Pillow Fort
+  desc: Basic defensive building
+  woodCost: 2
+  fluffCost: 0
+  candyCost: 0
+  prefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d2aff97e2ff513d438cbecfdf0d41da5, type: 3}

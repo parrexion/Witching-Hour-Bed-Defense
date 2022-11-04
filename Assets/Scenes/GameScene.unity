@@ -347,6 +347,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 903348660647142081, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903348660647142081, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903348660647142081, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903348660647142081, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1469047031972766979, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
       propertyPath: m_Name
       value: BuildCanvas
@@ -435,8 +467,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1469047033167293008, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: buildingLibrary
+      value: 
+      objectReference: {fileID: 11400000, guid: 710ece015c095584e811bb0c7aa7bbd5, type: 2}
+    - target: {fileID: 1469047033167293008, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: buildingTemplater
+      value: 
+      objectReference: {fileID: 1469047032583640283}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+--- !u!114 &1469047032583640283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4850395374087373141, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+  m_PrefabInstance: {fileID: 1469047032583640282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987e1e466fdf1b14eadf99bc6aae0d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1937420028273998816
 PrefabInstance:
   m_ObjectHideFlags: 0

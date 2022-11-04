@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MapCreator : MonoBehaviour {
 
+	public static MapCreator instance = null;
+	private void Awake() {
+		instance = this;
+	}
+
 	public Camera cam;
 	public Vector2Int MaxSize = new Vector2Int(10, 10);
 
@@ -40,7 +45,8 @@ public class MapCreator : MonoBehaviour {
 					map[pos].AddNeighbour(Direction.WEST, map[pos - 1]);
 				mapVisual[pos] = Instantiate(tilePrefab, transform);
 				mapVisual[pos].transform.position = new Vector3(x, y, 0);
-				mapVisual[pos].SetBuilding();
+				mapVisual[pos].SetBuilding(null);
+				map[pos].onBuildingChanged += mapVisual[pos].SetBuilding;
 				pos++;
 			}
 		}
@@ -52,5 +58,15 @@ public class MapCreator : MonoBehaviour {
 
 	private MapTile GetTile(int x, int y) {
 		return map[GetIndex(x, y)];
+	}
+
+	public MapTile ApproximateTile(Vector3 position) {
+		Vector2Int approx = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y - 0.25f));
+		if (approx.x < 0 || approx.x >= MaxSize.x)
+			return null;
+		if (approx.y < 0 || approx.y >= MaxSize.y)
+			return null;
+
+		return GetTile(approx.x, approx.y);
 	}
 }
