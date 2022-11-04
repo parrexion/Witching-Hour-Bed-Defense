@@ -8,19 +8,23 @@ public class MapCreator : MonoBehaviour {
 	public Vector2Int MaxSize = new Vector2Int(10, 10);
 
 	[Header("Prefabs")]
+	public PlayerMovement playerPrefab;
 	public MapTileVisual tilePrefab;
 	public GameObject bedPrefab;
 
+	private PlayerMovement player;
 	private MapTile[] map;
 	private MapTileVisual[] mapVisual;
-	private List<GameObject> otherStuff;
+	private List<GameObject> otherStuff = new List<GameObject>();
 
 
 	private void Start() {
 		cam.transform.position = new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, -10f);
 		cam.orthographicSize = (Mathf.Max(MaxSize.x, MaxSize.y) + 1) * 0.5f;
 		CreateMap(MaxSize.x, MaxSize.y);
-		GameObject bed = Instantiate(bedPrefab, cam.transform.position, Quaternion.identity, transform);
+		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity, transform);
+		otherStuff.Add(bed);
+		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity, transform);
 	}
 
 	private void CreateMap(int sizeX, int sizeY) {
@@ -36,6 +40,7 @@ public class MapCreator : MonoBehaviour {
 					map[pos].AddNeighbour(Direction.WEST, map[pos - 1]);
 				mapVisual[pos] = Instantiate(tilePrefab, transform);
 				mapVisual[pos].transform.position = new Vector3(x, y, 0);
+				mapVisual[pos].SetBuilding();
 				pos++;
 			}
 		}

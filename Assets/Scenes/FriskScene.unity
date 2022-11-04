@@ -146,10 +146,6 @@ PrefabInstance:
       propertyPath: MaxSize.y
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 3729328736677850281, guid: 674564626e1a2cf4185f588ff3cce355, type: 3}
-      propertyPath: bedPrefab
-      value: 
-      objectReference: {fileID: 9021334226090458488, guid: 7ac67f91a285e194eac962f7fb6e6552, type: 3}
     - target: {fileID: 3729328736677850294, guid: 674564626e1a2cf4185f588ff3cce355, type: 3}
       propertyPath: m_RootOrder
       value: 1

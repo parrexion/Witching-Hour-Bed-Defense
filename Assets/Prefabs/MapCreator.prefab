@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  tilePrefab: {fileID: 7528572091131114908, guid: b7f243e1e9ff40a4e8b10f39a74bf759, type: 3}
   MaxSize: {x: 10, y: 10}
+  tilePrefab: {fileID: 7528572091131114908, guid: b7f243e1e9ff40a4e8b10f39a74bf759, type: 3}
+  bedPrefab: {fileID: 9021334226090458488, guid: 7ac67f91a285e194eac962f7fb6e6552, type: 3}
