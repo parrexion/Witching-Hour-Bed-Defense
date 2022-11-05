@@ -6,22 +6,28 @@ using System;
 public class Inventory : MonoBehaviour {
 
     public static Inventory instance;
+	private void Awake() {
+		instance = this;
+		Setup();
+	}
 
 	public Action onInventoryUpdated;
 
+	[Header("Starting values")]
 	public int maxHealth;
 	public int startWood;
 	public int startFluff;
 	public int startCandy;
 
 	private float health;
+	public int BuildLevel { get; set; }
+
     private int wood = 0;
     private int fluff = 0;
     private int candy = 0;
 
 
-    private void Awake() {
-        instance = this;
+    private void Setup() {
 		health = maxHealth;
 		addWood(startWood);
 		addFluff(startFluff);

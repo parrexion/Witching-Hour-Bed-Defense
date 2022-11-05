@@ -5,10 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName="ScriptableObjects/Building")]
 public class Building : ScriptableObject {
 
-    public string label, desc;
-    public int woodCost, fluffCost, candyCost;
     public GameObject prefab;
-    public Sprite sprite;
     public bool blocking = true;
+
+    [Header("Menu info")]
+    public string label, desc;
+    public Sprite sprite;
+    public int unlockLevel;
+    public int removeLevel = 99;
+
+    [Header("Cost")]
+    public int woodCost;
+    public int fluffCost;
+    public int candyCost;
 
 }

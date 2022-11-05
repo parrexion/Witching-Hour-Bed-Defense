@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c858a0e9dc8c4ad4883dac13e7ef04cc, type: 3}
   m_Name: 02_Expensive
   m_EditorClassIdentifier: 
+  prefab: {fileID: 8687454195290242821, guid: 90cc8f321ff8d6343a0f06325ac4f878, type: 3}
+  blocking: 1
   label: Expensive
   desc: Too expensive
+  sprite: {fileID: 21300000, guid: 4e15527c6196ef548afffb960c69ee1b, type: 3}
+  unlockLevel: 0
+  removeLevel: 99
   woodCost: 20
   fluffCost: 20
   candyCost: 20
-  prefab: {fileID: 8687454195290242821, guid: 90cc8f321ff8d6343a0f06325ac4f878, type: 3}
-  sprite: {fileID: 21300000, guid: 4e15527c6196ef548afffb960c69ee1b, type: 3}

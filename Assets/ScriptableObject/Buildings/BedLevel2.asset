@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1349c81d0b659264fa23aba71d7206cf, type: 3}
+  m_Name: BedLevel2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  blocking: 1
+  label: Bed Lv2
+  desc: Unlocks better buildings
+  sprite: {fileID: 21300000, guid: 8eaccf86529a91142b65f74bb924a01b, type: 3}
+  unlockLevel: 1
+  removeLevel: 2
+  woodCost: 0
+  fluffCost: 0
+  candyCost: 0
+  awardsLevel: 2
+  bedPlayerSprite: {fileID: 21300000, guid: 018dce6d6d6e60e40ac442fdef63f417, type: 3}

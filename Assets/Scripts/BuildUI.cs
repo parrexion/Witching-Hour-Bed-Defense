@@ -13,18 +13,15 @@ public class BuildUI : MonoBehaviour {
 	public TemplateRecycler buildingTemplater;
 	public BuildingInfoUI buildingInfo;
 
+	private List<Building> buildingList = new List<Building>();
 	private int selectedIndex;
 
 
 	private void Start() {
-		for (int i = 0; i < buildingLibrary.buildings.Length; i++) {
-			BuildingEntry entry = buildingTemplater.CreateEntry<BuildingEntry>();
-			entry.SetBuilding(buildingLibrary.buildings[i]);
-		}
-		RefreshHighlight();
-		RefreshAfford();
+		CreateBuildMenu(Inventory.instance.BuildLevel);
 
 		Inventory.instance.onInventoryUpdated += RefreshAfford;
+		GameState.instance.onUpgradeBed += CreateBuildMenu;
 	}
 
 	private void Update() {
@@ -36,8 +33,23 @@ public class BuildUI : MonoBehaviour {
 		}
 	}
 
+	private void CreateBuildMenu(int level) {
+		selectedIndex = 0;
+		buildingList.Clear();
+		buildingTemplater.Clear();
+		for (int i = 0; i < buildingLibrary.buildings.Length; i++) {
+			if (buildingLibrary.buildings[i] != null && (buildingLibrary.buildings[i].unlockLevel > GameState.instance.CurrentLevel || buildingLibrary.buildings[i].removeLevel <= GameState.instance.CurrentLevel))
+				continue;
+			BuildingEntry entry = buildingTemplater.CreateEntry<BuildingEntry>();
+			entry.SetBuilding(buildingLibrary.buildings[i]);
+			buildingList.Add(buildingLibrary.buildings[i]);
+		}
+		RefreshHighlight();
+		RefreshAfford();
+	}
+
 	private void RefreshHighlight() {
-		buildingInfo.SetInfo(buildingLibrary.buildings[selectedIndex]);
+		buildingInfo.SetInfo(buildingList[selectedIndex]);
 		for (int i = 0; i < buildingTemplater.Count; i++) {
 			buildingTemplater.GetEntry<BuildingEntry>(i).SetHighlighted(i == selectedIndex);
 		}
@@ -54,13 +66,13 @@ public class BuildUI : MonoBehaviour {
 	}
 
 	public Building GetCurrentBuilding() {
-		return buildingLibrary.buildings[selectedIndex];
+		return buildingList[selectedIndex];
 	}
 
 	private void RefreshAfford() {
 		for (int i = 0; i < buildingTemplater.Count; i++) {
-			if (buildingLibrary.buildings[i] != null) {
-				bool affordable = Inventory.instance.CanAfford(buildingLibrary.buildings[i]);
+			if (buildingList[i] != null) {
+				bool affordable = Inventory.instance.CanAfford(buildingList[i]);
 				buildingTemplater.GetEntry<BuildingEntry>(i).SetAffordable(affordable);
 			}
 			else {

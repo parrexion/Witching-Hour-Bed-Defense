@@ -46,8 +46,8 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	IEnumerator Spawn() {
-		if (currentWaveStage >= waves.Length)
-			currentWaveStage = waves.Length;
+		if (currentWaveLevel >= waves.Length)
+			currentWaveLevel = waves.Length;
 		totalEnemies = waves[currentWaveLevel].spawns.Count;
 		yield return new WaitForSeconds(3f);
 
@@ -65,6 +65,10 @@ public class EnemySpawner : MonoBehaviour {
 
 	IEnumerator DelayedWaveFinished() {
 		yield return new WaitForSeconds(finishDelay);
+		Inventory.instance.addWood(waves[currentWaveLevel].wood);
+		Inventory.instance.addFluff(waves[currentWaveLevel].fluff);
+		Inventory.instance.addCandy(waves[currentWaveLevel].candy);
+		currentWaveLevel++;
 		onWaveFinished?.Invoke();
 	}
 
@@ -89,7 +93,6 @@ public class EnemySpawner : MonoBehaviour {
 		totalEnemies--;
 
 		if (totalEnemies == 0) {
-			currentWaveLevel++;
 			StartCoroutine(DelayedWaveFinished());
 		}
 	}

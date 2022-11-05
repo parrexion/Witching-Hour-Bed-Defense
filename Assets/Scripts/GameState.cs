@@ -12,6 +12,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	public System.Action<bool> onDayChanged;
+	public System.Action<int> onUpgradeBed;
 
 	[Header("References")]
 	public CameraController cameraController;
@@ -32,6 +33,7 @@ public class GameState : MonoBehaviour {
 	private bool isDay = false;
 	public bool IsDay => isDay;
 	public int CurrentDay { get; private set; }
+	public int CurrentLevel { get; private set; } = 1;
 
 
 	private void Start() {
@@ -86,6 +88,12 @@ public class GameState : MonoBehaviour {
 			SetNight();
 		else
 			SetDay();
+	}
+
+	public void UpgradeBed(BedBuilding nextLevel) {
+		CurrentLevel = nextLevel.awardsLevel;
+		playerBed.Upgrade(nextLevel);
+		onUpgradeBed?.Invoke(nextLevel.awardsLevel);
 	}
 
 	private void WaveFinished() {
