@@ -24,9 +24,9 @@ AnimationClip:
     - time: 0.33333334
       value: {fileID: 21300000, guid: 09dff1cae5a5c7a4d8d37956248f9f63, type: 3}
     - time: 0.7
-      value: {fileID: 21300000, guid: 09dff1cae5a5c7a4d8d37956248f9f63, type: 3}
+      value: {fileID: 21300000, guid: 836c83997df13e0479b03a20c5b4db2d, type: 3}
     attribute: m_Sprite
-    path: 
+    path: BedSprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -37,7 +37,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 1928122893
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -46,7 +46,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 1da8f64f48ab4584fbf2746230e616bc, type: 3}
     - {fileID: 21300000, guid: 09dff1cae5a5c7a4d8d37956248f9f63, type: 3}
-    - {fileID: 21300000, guid: 09dff1cae5a5c7a4d8d37956248f9f63, type: 3}
+    - {fileID: 21300000, guid: 836c83997df13e0479b03a20c5b4db2d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

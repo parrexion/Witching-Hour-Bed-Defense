@@ -273,7 +273,7 @@ MonoBehaviour:
   bedLight: {fileID: 226560868}
   bedSprite: {fileID: 8958858346956579170}
   bedPlayerSprite: {fileID: 2069471698925285472}
-  upgradeLevels: []
+  sleepAnim: {fileID: 3433187857991231130}
 --- !u!61 &1783507204
 BoxCollider2D:
   m_ObjectHideFlags: 0
