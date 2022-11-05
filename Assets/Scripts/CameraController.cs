@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour {
 		this.clampArea.height += 2f * clampOffset.y - followCamSize;
 	}
 
-	private void Update() {
+	private void FixedUpdate() {
 		if (Input.GetKeyDown(KeyCode.Return)) {
 			Toggle();
 		}
