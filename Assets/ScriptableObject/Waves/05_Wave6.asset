@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f623350e8e06ce5468330d357141544f, type: 3}
-  m_Name: 01_Wave2
+  m_Name: 05_Wave6
   m_EditorClassIdentifier: 
   spawns:
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
+  - {fileID: 11400000, guid: f3c86693f6e7a404b8860b4dc8341a5d, type: 2}
+  - {fileID: 11400000, guid: 7c5330288d0636541b4236197f991b57, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 7c5330288d0636541b4236197f991b57, type: 2}
   - {fileID: 11400000, guid: 0e681bfd786812240bfeb3e2ee45fdc2, type: 2}
-  delay: 1
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f3c86693f6e7a404b8860b4dc8341a5d, type: 2}
+  - {fileID: 11400000, guid: 0e681bfd786812240bfeb3e2ee45fdc2, type: 2}
+  delay: 1.5
   wood: 0
   fluff: 0
   candy: 0

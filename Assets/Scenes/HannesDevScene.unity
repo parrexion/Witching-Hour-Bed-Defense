@@ -346,6 +346,30 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 21e19ad3a8ae9d14d977e0e97898821f, type: 2}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8240af6b003e66f40bad19a4d3c5de0f, type: 2}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 285696e7418bf7e4fa53f72b1f2d9615, type: 2}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 26284d4802f62944a9bcc2673cadd304, type: 2}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e5e0cfdf7f101746871104f87adf09e, type: 2}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 306680491}
