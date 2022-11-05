@@ -44,6 +44,15 @@ public class EnemySpawner : MonoBehaviour {
 		enemies.Remove(enemy);
 		totalEnemies--;
 	}
+
+	public List<Enemy> getEnemies() {
+		for(int i = enemies.Count-1; i >= 0; i--) {
+			if(enemies[i] == null) {
+				enemies.RemoveAt(i);
+			}
+		}
+		return enemies;
+	}
 }
 
 #if UNITY_EDITOR

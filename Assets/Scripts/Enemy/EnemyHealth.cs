@@ -12,13 +12,13 @@ public class EnemyHealth : MonoBehaviour {
     public Gradient gradient;
 
 
-    private int health;
+    private float health;
 
     private void Start() {
         health = maxHealth;
     }
 
-    public void damageEnemy(int damage) {
+    public void damageEnemy(float damage) {
         health -= damage;
         if(health <= 0) {
             die();
