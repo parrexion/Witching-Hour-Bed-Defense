@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3729328736677850280
+--- !u!1 &6241237694081938433
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3729328736677850294}
-  - component: {fileID: 3729328736677850281}
+  - component: {fileID: 6241237694081938439}
+  - component: {fileID: 6241237694081938438}
   m_Layer: 0
-  m_Name: MapCreator
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3729328736677850294
+--- !u!4 &6241237694081938439
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3729328736677850280}
+  m_GameObject: {fileID: 6241237694081938433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,20 +32,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3729328736677850281
+--- !u!114 &6241237694081938438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3729328736677850280}
+  m_GameObject: {fileID: 6241237694081938433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0034f85648c42124fa03d90d09f199eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b549bfbe5124a143b0eaf621c59cf12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSize: {x: 20, y: 15}
-  astar: {fileID: 3837832651054829449, guid: 8d707ecf927cb4344866e814c76dbf0e, type: 3}
-  playerPrefab: {fileID: 8588812248532441123, guid: 13f11b88de355fd4fbbcd68f76e2a884, type: 3}
-  tilePrefab: {fileID: 7528572091131114908, guid: b7f243e1e9ff40a4e8b10f39a74bf759, type: 3}
-  bedPrefab: {fileID: 1894512458144202542, guid: 164fdbafc798f5645994bc8569f4cf6b, type: 3}
+  maxHealth: 100

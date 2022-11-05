@@ -47,13 +47,25 @@ public class CameraController : MonoBehaviour {
 		}
 	}
 
-	private void Toggle() {
+	public void Toggle() {
 		followPlayer = !followPlayer;
 		if (followPlayer) {
 			ZoomIn();
 		}
 		else {
 			ZoomOut();
+		}
+	}
+
+	public void FollowPlayer() {
+		if (!followPlayer) {
+			Toggle();
+		}
+	}
+
+	public void GoToOverview() {
+		if (followPlayer) {
+			Toggle();
 		}
 	}
 

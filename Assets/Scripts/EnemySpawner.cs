@@ -29,6 +29,10 @@ public class EnemySpawner : MonoBehaviour {
 
 	private void Start() {
 		mainCam = Camera.main;
+		//StartCoroutine(spawn());
+	}
+
+	public void SendWave() {
 		StartCoroutine(spawn());
 	}
 
@@ -50,7 +54,7 @@ public class EnemySpawner : MonoBehaviour {
 	public void SpawnEnemy(GameObject enemy, Vector3 pos) {
 		Enemy e = Instantiate(enemyPrefab, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
-		e.SetTarget(MapCreator.instance.GetBed());
+		e.SetTarget(MapCreator.instance.GetBed().transform);
 		e.onDestroyed += CleanUpEnemy;
 		enemies.Add(e);
 		totalEnemies++;
@@ -85,6 +89,9 @@ public class EnemySpawnerEditor : Editor {
 	public override void OnInspectorGUI() {
 		if (GUILayout.Button("Update pathfinding")) {
 			((EnemySpawner)target).RefreshPathfinding();
+		}
+		if (GUILayout.Button("Send Wave")) {
+			((EnemySpawner)target).SendWave();
 		}
 		if (GUILayout.Button("Spawn Enemy")) {
 			((EnemySpawner)target).SpawnEnemy();

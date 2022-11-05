@@ -6,35 +6,38 @@ using System;
 public class Inventory : MonoBehaviour {
 
     public static Inventory instance;
+
+	public Action onInventoryUpdated;
+
 	public int maxHealth;
 
+	private float health;
     private int wood = 0;
     private int fluff = 0;
     private int candy = 0;
 
-	private float health;
 
-    private void Start() {
+    private void Awake() {
         instance = this;
 		health = maxHealth;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
     }
 
 	// Health functions
 
 	public void addHealth(float newHealth) {
 		health = Math.Min(health + newHealth, maxHealth);
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void removeHealth(float damage) {
 		health = Math.Max(health - damage, 0);
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void setHealth(float newHealth) {
 		health = newHealth; // Allowing overriding max health
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public float getHealth() {
@@ -52,17 +55,17 @@ public class Inventory : MonoBehaviour {
 
 	public void removeWood(int amount) {
 		wood -= amount;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void addWood(int amount) {
 		wood += amount;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void setWood(int value) {
 		wood = value;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public int getWood() {
@@ -77,17 +80,17 @@ public class Inventory : MonoBehaviour {
 
 	public void removeFluff(int amount) {
 		fluff -= amount;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void addFluff(int amount) {
 		fluff += amount;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void setFluff(int value) {
 		fluff = value;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public int getFluff() {
@@ -101,17 +104,17 @@ public class Inventory : MonoBehaviour {
 
 	public void removeCandy(int amount) {
 		candy -= amount;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void addCandy(int amount) {
 		candy += amount;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public void setCandy(int value) {
 		candy = value;
-		InventoryCanvas.updateText();
+		onInventoryUpdated?.Invoke();
 	}
 
 	public int getCandy() {

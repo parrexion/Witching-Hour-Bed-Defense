@@ -225,6 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1218106486929960432}
+  - component: {fileID: 1894512458144202542}
   - component: {fileID: 1218106486929960435}
   - component: {fileID: 1783507204}
   - component: {fileID: 1783507205}
@@ -254,6 +255,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894512458144202542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218106486929960433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b975116e4a61f4d8e419c786f265b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bedLight: {fileID: 226560868}
 --- !u!212 &1218106486929960435
 SpriteRenderer:
   m_ObjectHideFlags: 0

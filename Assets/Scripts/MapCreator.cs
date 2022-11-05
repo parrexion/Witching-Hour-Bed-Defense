@@ -10,35 +10,30 @@ public class MapCreator : MonoBehaviour {
 		instance = this;
 	}
 
-	public CameraController camController;
 	public Vector2Int MaxSize = new Vector2Int(10, 10);
 
 	[Header("Prefabs")]
 	public AstarPath astar;
 	public PlayerMovement playerPrefab;
 	public MapTileVisual tilePrefab;
-	public GameObject bedPrefab;
+	public PlayerBed bedPrefab;
 
 	private PlayerMovement player;
-	public GameObject bed;
+	private PlayerBed bed;
 	private MapTile[] map;
-	private MapTileVisual[] mapVisual;
-	private List<GameObject> otherStuff = new List<GameObject>();
+	private MapTileVisual[] mapVisuals;
 
 
-	private void Start() {
+	public void CreateMap(CameraController cam) {
 		CreateMap(MaxSize.x, MaxSize.y);
-		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
-		this.bed = bed;
-		otherStuff.Add(bed);
-
+		bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
 		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity);
-		camController.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
+		cam.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
 	}
 
 	private void CreateMap(int sizeX, int sizeY) {
 		map = new MapTile[sizeX * sizeY];
-		mapVisual = new MapTileVisual[sizeX * sizeY];
+		mapVisuals = new MapTileVisual[sizeX * sizeY];
 		int pos = 0;
 		for (int y = 0; y < sizeY; y++) {
 			for (int x = 0; x < sizeX; x++) {
@@ -47,20 +42,26 @@ public class MapCreator : MonoBehaviour {
 					map[pos].AddNeighbour(Direction.SOUTH, map[pos - sizeX]);
 				if (x > 0)
 					map[pos].AddNeighbour(Direction.WEST, map[pos - 1]);
-				mapVisual[pos] = Instantiate(tilePrefab, transform);
-				mapVisual[pos].transform.position = new Vector3(x, y, 0);
-				mapVisual[pos].SetBuilding(null);
-				map[pos].onBuildingChanged += mapVisual[pos].SetBuilding;
+				mapVisuals[pos] = Instantiate(tilePrefab, transform);
+				mapVisuals[pos].transform.position = new Vector3(x, y, 0);
+				mapVisuals[pos].SetBuilding(null);
+				map[pos].onBuildingChanged += mapVisuals[pos].SetBuilding;
 				pos++;
 			}
 		}
 	}
 
-	public Transform GetPlayer() {
-		return player.transform;
+	public PlayerMovement GetPlayerMove() {
+		return player;
 	}
-	public Transform GetBed() {
-		return bed.transform;
+
+	public void SetBuildMode(bool active) {
+		for (int i = 0; i < mapVisuals.Length; i++) {
+			mapVisuals[i].SetBuildMode(active);
+		}
+	}
+	public PlayerBed GetBed() {
+		return bed;
 	}
 
 	private int GetIndex(int x, int y) {

@@ -8,6 +8,17 @@ public class MapTileVisual : MonoBehaviour {
 	public SpriteRenderer building;
 	public Collider2D buildingCollider;
 
+	private Building currentBuilding;
+
+
+	public void SetBuildMode(bool active) {
+		if (currentBuilding) {
+			tileSprite.enabled = false;
+		}
+		else {
+			tileSprite.enabled = active;
+		}
+	}
 
 	public void SetBuilding(Building build) {
 		if (build == null) {
