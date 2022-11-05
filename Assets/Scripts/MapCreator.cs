@@ -27,10 +27,10 @@ public class MapCreator : MonoBehaviour {
 
 	private void Start() {
 		CreateMap(MaxSize.x, MaxSize.y);
-		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity, transform);
+		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
 		otherStuff.Add(bed);
 
-		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity, transform);
+		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity);
 		camController.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
 	}
 

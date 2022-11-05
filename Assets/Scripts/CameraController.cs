@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
 
 	[SerializeField] private Camera cam;
 	[SerializeField] private Vector3 offset;
+	[SerializeField] private Vector2 clampOffset;
 	[SerializeField] private float followCamSize;
 
 	[Header("Animation settings")]
@@ -28,10 +29,10 @@ public class CameraController : MonoBehaviour {
 		this.bedCamSize = bedCamSize;
 		this.clampArea = clampArea;
 
-		this.clampArea.x = followCamSize + 1;
-		this.clampArea.y = followCamSize * 0.5f;
-		this.clampArea.width -= 2f * followCamSize;
-		this.clampArea.height -= followCamSize;
+		this.clampArea.x = followCamSize + 1 - clampOffset.x;
+		this.clampArea.y = followCamSize * 0.5f - clampOffset.y;
+		this.clampArea.width += 2f * (-followCamSize + clampOffset.x);
+		this.clampArea.height += 2f * clampOffset.y - followCamSize;
 	}
 
 	private void Update() {
