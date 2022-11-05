@@ -44,6 +44,7 @@ public class MapCreator : MonoBehaviour {
 		cam.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
 
 		//Create bed area
+		bed.Setup(Camera.main);
 		for (int y = MaxSize.y / 2 - 1, target = MaxSize.y / 2 + 2; y < target; y++) {
 			for (int x = MaxSize.x / 2 - 2, target2 = MaxSize.x / 2 + 2; x < target2; x++) {
 				MapTile tile = GetTile(x, y);

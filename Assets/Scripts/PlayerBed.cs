@@ -9,13 +9,16 @@ public class PlayerBed : MonoBehaviour {
 	public SpriteRenderer bedSprite;
 	public SpriteRenderer bedPlayerSprite;
 	public Animator sleepAnim;
+	public Canvas sleepCanvas;
 
 	private bool playSleepAnimation;
 
 
-	private void Start() {
+	public void Setup(Camera cam) {
 		bedPlayerSprite.enabled = false;
 		playSleepAnimation = true;
+		sleepCanvas.worldCamera = cam;
+		sleepCanvas.enabled = false;
 	}
 
 	public void Upgrade(BedBuilding nextLevel) {

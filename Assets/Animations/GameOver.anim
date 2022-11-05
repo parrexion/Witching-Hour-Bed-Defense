@@ -6,9 +6,9 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWakingUp
+  m_Name: GameOver
   serializedVersion: 6
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -20,39 +20,27 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 1da8f64f48ab4584fbf2746230e616bc, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 09dff1cae5a5c7a4d8d37956248f9f63, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: 836c83997df13e0479b03a20c5b4db2d, type: 3}
+      value: {fileID: 21300000, guid: 72ae4e5ff0e98ae4a8a47322e25dde63, type: 3}
+    - time: 2.8
+      value: {fileID: 21300000, guid: 868010dad5a8e944997d17c25872c319, type: 3}
     attribute: m_Sprite
-    path: BedSprite
-    classID: 212
-    script: {fileID: 0}
-  m_SampleRate: 60
+    path: GameOver
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 1928122893
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 21300000, guid: 1da8f64f48ab4584fbf2746230e616bc, type: 3}
-    - {fileID: 21300000, guid: 09dff1cae5a5c7a4d8d37956248f9f63, type: 3}
-    - {fileID: 21300000, guid: 836c83997df13e0479b03a20c5b4db2d, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 2.8999999
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
