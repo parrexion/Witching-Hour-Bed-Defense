@@ -222,13 +222,14 @@ GameObject:
   m_Component:
   - component: {fileID: 793815240}
   - component: {fileID: 793815242}
+  - component: {fileID: 793815243}
   m_Layer: 5
   m_Name: ChatBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &793815240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -259,6 +260,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793815239}
   m_CullTransparentMesh: 1
+--- !u!114 &793815243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793815239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549c9b68c39da224698c6699107177cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 159661827}
+  timeBetweenCharacters: 0.01
+  childObjects:
+  - {fileID: 1853616236}
+  - {fileID: 130377265}
 --- !u!1 &1853616236
 GameObject:
   m_ObjectHideFlags: 0
