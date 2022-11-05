@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShooterTower : MonoBehaviour {
     public GameObject projectile;
     public Shooter shooter;
+    public Animator anim;
 
     private void Start() {
         StartCoroutine(fire());  
@@ -13,7 +14,8 @@ public class ShooterTower : MonoBehaviour {
     IEnumerator fire() {
         yield return new WaitForSeconds(shooter.firingDelay);
         Transform enemy = getEnemy();
-        if(enemy == null) {StartCoroutine(fire()); yield break;}
+        if(enemy == null) {anim.SetBool("Firing", false); StartCoroutine(fire()); yield break;}
+        anim.SetBool("Firing", true);
         Vector2 angle = enemy.position - transform.position;
         angle = Vector3.Normalize(angle);
         GameObject tempBullet = Instantiate(projectile, transform.position, Quaternion.identity);
