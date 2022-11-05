@@ -16,16 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
   - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
   - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
-  - {fileID: 11400000, guid: 20c5e151e9784794985091ad01544c2b, type: 2}
   delay: 2
+  wood: 0
+  fluff: 0
+  candy: 0

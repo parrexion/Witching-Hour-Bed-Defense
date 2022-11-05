@@ -59,10 +59,12 @@ public class EnemySpawner : MonoBehaviour {
 		currentWaveStage = 0;
 		while (currentWaveStage < waves[currentWaveLevel].spawns.Count) {
 			WaveSpawn currentSpawn = waves[currentWaveLevel].spawns[currentWaveStage];
-			for (int i = 0; i < currentSpawn.amount; i++) {
-				int index = Random.Range(0, spawnPoints.Count);
-				Vector3 spawnPos = spawnPoints[index].position;
-				SpawnEnemy(currentSpawn.enemy, spawnPos);
+			if(currentSpawn != null) {
+				for (int i = 0; i < currentSpawn.amount; i++) {
+					int index = Random.Range(0, spawnPoints.Count);
+					Vector3 spawnPos = spawnPoints[index].position;
+					SpawnEnemy(currentSpawn.enemy, spawnPos);
+				}
 			}
 			currentWaveStage++;
 			yield return new WaitForSeconds(waves[currentWaveLevel].delay);
