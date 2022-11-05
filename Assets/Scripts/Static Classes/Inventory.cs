@@ -17,23 +17,24 @@ public class Inventory : MonoBehaviour {
     private void Start() {
         instance = this;
 		health = maxHealth;
+		InventoryCanvas.updateText();
     }
 
 	// Health functions
 
 	public void addHealth(int newHealth) {
 		health = Math.Min(health + newHealth, maxHealth);
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void removeHealth(int damage) {
 		health = Math.Max(health - damage, 0);
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void setHealth(int newHealth) {
 		health = newHealth; // Allowing overriding max health
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public int getHealth() {
@@ -51,17 +52,17 @@ public class Inventory : MonoBehaviour {
 
 	public void removeWood(int amount) {
 		wood -= amount;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void addWood(int amount) {
 		wood += amount;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void setWood(int value) {
 		wood = value;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public int getWood() {
@@ -76,17 +77,17 @@ public class Inventory : MonoBehaviour {
 
 	public void removeFluff(int amount) {
 		fluff -= amount;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void addFluff(int amount) {
 		fluff += amount;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void setFluff(int value) {
 		fluff = value;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public int getFluff() {
@@ -100,17 +101,17 @@ public class Inventory : MonoBehaviour {
 
 	public void removeCandy(int amount) {
 		candy -= amount;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void addCandy(int amount) {
 		candy += amount;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public void setCandy(int value) {
 		candy = value;
-		InventoryCanvas.instance.updateText();
+		InventoryCanvas.updateText();
 	}
 
 	public int getCandy() {

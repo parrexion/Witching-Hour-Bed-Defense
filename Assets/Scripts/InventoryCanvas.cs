@@ -15,14 +15,22 @@ public class InventoryCanvas : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         instance = this;
-        updateText();
+        setText();
     }
 
-    public void updateText() {
-        woodAmountLabel.text = Inventory.instance.getWood().ToString();
-        fluffAmountLabel.text = Inventory.instance.getFluff().ToString();
-        candyAmountLabel.text = Inventory.instance.getCandy().ToString();
+    public static void updateText() {
+        if (instance != null) {
+            instance.setText();
+        }
+    }
 
-        healthAmountLabel.text = (Inventory.instance.getHealth() / Inventory.instance.maxHealth * 100).ToString() + "%";
+    private void setText() {
+        if (Inventory.instance != null) {
+            woodAmountLabel.text = Inventory.instance.getWood().ToString();
+            fluffAmountLabel.text = Inventory.instance.getFluff().ToString();
+            candyAmountLabel.text = Inventory.instance.getCandy().ToString();
+
+            healthAmountLabel.text = (Inventory.instance.getHealth() / Inventory.instance.maxHealth * 100).ToString() + "%";
+        }
     }
 }
