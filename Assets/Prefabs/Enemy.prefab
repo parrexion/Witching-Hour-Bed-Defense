@@ -200,8 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd068bb7716e1441bbaad10681c16d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
-  droppedItem: {fileID: 3787167988184369034, guid: 60a3b58b6888ec4478a6e6ca7239fecf, type: 3}
+  enemy: {fileID: 11400000, guid: b958067dfb01ef5419db51e9f742373f, type: 2}
   slider: {fileID: 3698367138121800869}
   fill: {fileID: 3698367138645581863}
   gradient:
