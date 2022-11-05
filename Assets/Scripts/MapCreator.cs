@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEditor;
 
 public class MapCreator : MonoBehaviour {
 
@@ -20,15 +21,27 @@ public class MapCreator : MonoBehaviour {
 
 	private PlayerMovement player;
 	private PlayerBed bed;
-	private MapTile[] map;
-	private MapTileVisual[] mapVisuals;
+	[SerializeField] private MapTile[] map = null;
+	[SerializeField] private MapTileVisual[] mapVisuals = null;
 
 
-	public void CreateMap(CameraController cam) {
-		CreateMap(MaxSize.x, MaxSize.y);
+	public void CreateMap(CameraController cam, bool forced = false) {
+		if (forced) {
+			CreateMap(MaxSize.x, MaxSize.y);
+		}
 		bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
 		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity);
 		cam.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
+	}
+
+
+	public void CreateMapEditor() {
+		if (mapVisuals != null) {
+			for (int i = 0; i < mapVisuals.Length; i++) {
+				DestroyImmediate(mapVisuals[i].gameObject);
+			}
+		}
+		CreateMap(MaxSize.x, MaxSize.y);
 	}
 
 	private void CreateMap(int sizeX, int sizeY) {
@@ -82,3 +95,18 @@ public class MapCreator : MonoBehaviour {
 		return GetTile(approx.x, approx.y);
 	}
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(MapCreator))]
+public class MapCreatorEditor : Editor {
+
+	public override void OnInspectorGUI() {
+		if (GUILayout.Button("Create map")) {
+			((MapCreator)target).CreateMapEditor();
+		}
+
+		base.OnInspectorGUI();
+	}
+}
+
+#endif
