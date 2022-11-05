@@ -15,6 +15,10 @@ public class InventoryCanvas : MonoBehaviour {
 	public TextMeshProUGUI candyAmountLabel;
 	public TextMeshProUGUI healthAmountLabel;
 
+	[Header("Game over")]
+	public GameObject gameOverBlocker;
+	public TextMeshProUGUI victoryText;
+
 
 	private void Start() {
 		if (Inventory.instance != null) {
@@ -24,7 +28,10 @@ public class InventoryCanvas : MonoBehaviour {
 		else {
 			Debug.LogError("Wrong spawn order for the inventory!");
 		}
+		gameOverBlocker.SetActive(false);
+
 		GameState.instance.onDayChanged += SetDayState;
+		GameState.instance.onGameOver += GameOver;
 	}
 
 	private void SetStats() {
@@ -44,6 +51,17 @@ public class InventoryCanvas : MonoBehaviour {
 			dayText.text = $"NIGHT {GameState.instance.CurrentDay}";
 			dayButton.text = "Wake up";
 		}
+	}
+
+	private void GameOver(bool isVictory) {
+		if (isVictory) {
+			victoryText.text = "VICTORY!";
+		}
+		else {
+			victoryText.text = "GAME OVER!";
+		}
+
+		gameOverBlocker.SetActive(true);
 	}
 
 	public void ClickDayButton() {
