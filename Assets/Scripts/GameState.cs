@@ -45,6 +45,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	private void SetDay() {
+		buildBarAnim.SetTrigger("Toggle");
 		isDay = true;
 		CurrentDay++;
 		nightlight.enabled = false;
@@ -62,6 +63,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	private void SetNight() {
+		buildBarAnim.SetTrigger("Toggle");
 		isDay = false;
 		DOTween.To(() => daylight.intensity, x => daylight.intensity = x, lightAmount.x, toggleTime)
 			.OnComplete(() => {
@@ -80,7 +82,6 @@ public class GameState : MonoBehaviour {
 	}
 
 	public void ToggleDay() {
-		buildBarAnim.SetTrigger("Toggle");
 		if (isDay)
 			SetNight();
 		else
