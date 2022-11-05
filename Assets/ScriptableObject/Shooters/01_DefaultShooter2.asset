@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c32f4c6d1cd4b2d4496560be4c8ccfd9, type: 3}
-  m_Name: 00_DefaultShooter
+  m_Name: 01_DefaultShooter2
   m_EditorClassIdentifier: 
-  label: Jam shooter
-  desc: Pew pew
-  woodCost: 2
+  label: Jam shooter 2
+  desc: Pew pew 2
+  woodCost: 3
   fluffCost: 0
-  candyCost: 8
-  prefab: {fileID: 6955069522116232223, guid: 333d8a3c403db64439c97fc120ecbe19, type: 3}
-  sprite: {fileID: 21300000, guid: 32c55ca74637e3f42b69e9fa5e680cba, type: 3}
+  candyCost: 12
+  prefab: {fileID: 2604223436753314166, guid: a12eb30850a5a1d428480dcbff5bdf07, type: 3}
+  sprite: {fileID: 21300000, guid: 848a2900fa9a37f43879f0dadb24350d, type: 3}
   blocking: 1
-  damagePerBullet: 1.5
-  bulletSpeed: 25
-  firingDelay: 0.5
+  damagePerBullet: 10
+  bulletSpeed: 35
+  firingDelay: 2.5
   targetting: 0
