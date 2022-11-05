@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemyObj : ScriptableObject {
 
     public float maxHealth, damage, attackDelay, moveSpeed;
-    public List<GameObject> droppedItems = new List<GameObject>();
 
+    [Header("Drops")]
+    public int dropWood;
+    public int dropFluff;
+    public int dropCandy;
 }

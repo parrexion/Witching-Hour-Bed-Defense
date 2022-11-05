@@ -5,32 +5,29 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour {
 
-    public EnemyObj enemy;
+	public System.Action onDeath;
 
-    public Slider slider;
-    public Image fill;
-    public Gradient gradient;
+	public Slider slider;
+	public Image fill;
+	public Gradient gradient;
+
+	private float health;
+	private float maxHealth;
 
 
-    private float health;
+	public void SetData(EnemyObj data) {
+		health = maxHealth = data.maxHealth;
+		slider.SetValueWithoutNotify(1f);
+	}
 
-    private void Start() {
-        health = enemy.maxHealth;
-    }
-
-    public void damageEnemy(float damage) {
-        Debug.Log("Damaged " + damage);
-        health -= damage;
-        slider.value = (health / enemy.maxHealth);
-        fill.color = gradient.Evaluate(health / enemy.maxHealth);
-        if(health <= 0) {
-            die();
-        }
-    }
-    private void die() {
-        int i = Random.Range(0, enemy.droppedItems.Count);
-        Instantiate(enemy.droppedItems[i], transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
+	public void DamageEnemy(float damage) {
+		//Debug.Log("Damaged " + damage);
+		health -= damage;
+		slider.value = (health / maxHealth);
+		fill.color = gradient.Evaluate(health / maxHealth);
+		if (health <= 0) {
+			onDeath?.Invoke();
+		}
+	}
 
 }

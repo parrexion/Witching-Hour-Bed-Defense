@@ -5,8 +5,8 @@ using UnityEngine;
 public class BedTrigger : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy")) {
-            float damage = other.GetComponent<EnemyHealth>().enemy.damage;
-            Inventory.instance.removeHealth(damage);
+            Enemy enemy = other.GetComponent<Enemy>();
+            Inventory.instance.removeHealth(enemy.GetDamage());
             Destroy(other.gameObject);
         }
     }

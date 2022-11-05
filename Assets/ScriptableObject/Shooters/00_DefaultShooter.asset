@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32f4c6d1cd4b2d4496560be4c8ccfd9, type: 3}
   m_Name: 00_DefaultShooter
   m_EditorClassIdentifier: 
+  prefab: {fileID: 6955069522116232223, guid: 333d8a3c403db64439c97fc120ecbe19, type: 3}
+  blocking: 1
   label: Jam shooter
   desc: Pew pew
+  sprite: {fileID: 21300000, guid: 32c55ca74637e3f42b69e9fa5e680cba, type: 3}
+  unlockLevel: 0
+  removeLevel: 99
   woodCost: 2
   fluffCost: 0
   candyCost: 8
-  prefab: {fileID: 6955069522116232223, guid: 333d8a3c403db64439c97fc120ecbe19, type: 3}
-  sprite: {fileID: 21300000, guid: 32c55ca74637e3f42b69e9fa5e680cba, type: 3}
-  blocking: 1
   damagePerBullet: 1.5
   bulletSpeed: 25
   firingDelay: 0.5
