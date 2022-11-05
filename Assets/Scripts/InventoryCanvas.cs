@@ -5,6 +5,11 @@ using TMPro;
 
 public class InventoryCanvas : MonoBehaviour {
 
+	[Header("Day/Night")]
+	public TextMeshProUGUI dayText;
+	public TextMeshProUGUI dayButton;
+
+	[Header("Stats")]
 	public TextMeshProUGUI woodAmountLabel;
 	public TextMeshProUGUI fluffAmountLabel;
 	public TextMeshProUGUI candyAmountLabel;
@@ -13,17 +18,32 @@ public class InventoryCanvas : MonoBehaviour {
 
 	private void Start() {
 		if (Inventory.instance != null) {
-			SetText();
-			Inventory.instance.onInventoryUpdated += SetText;
+			SetStats();
+			Inventory.instance.onInventoryUpdated += SetStats;
 		}
+		else {
+			Debug.LogError("Wrong spawn order for the inventory!");
+		}
+		GameState.instance.onDayChanged += SetDayState;
 	}
 
-	private void SetText() {
+	private void SetStats() {
+		healthAmountLabel.text = (Inventory.instance.getHealth() / Inventory.instance.maxHealth * 100).ToString() + "%";
+
 		woodAmountLabel.text = Inventory.instance.getWood().ToString();
 		fluffAmountLabel.text = Inventory.instance.getFluff().ToString();
 		candyAmountLabel.text = Inventory.instance.getCandy().ToString();
+	}
 
-		healthAmountLabel.text = (Inventory.instance.getHealth() / Inventory.instance.maxHealth * 100).ToString() + "%";
+	private void SetDayState(bool isDay) {
+		if (GameState.instance.IsDay) {
+			dayText.text = "DAY";
+			dayButton.text = "Go to bed";
+		}
+		else {
+			dayText.text = $"NIGHT {GameState.instance.CurrentDay}";
+			dayButton.text = "Wake up";
+		}
 	}
 
 	public void ClickDayButton() {

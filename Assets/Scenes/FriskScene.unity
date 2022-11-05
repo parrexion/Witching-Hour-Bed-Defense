@@ -207,22 +207,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1469047031972766979, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
       propertyPath: m_Name
       value: BuildCanvas
@@ -311,18 +295,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2657577422048505608, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657577422048505608, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2657577422048505608, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
 --- !u!1001 &536645382
@@ -332,30 +304,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 514606468997401611, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 514606468997401611, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 514606468997401611, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 514606468997401611, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 514606468997401611, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 514606468997401611, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 643256184692440850, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas

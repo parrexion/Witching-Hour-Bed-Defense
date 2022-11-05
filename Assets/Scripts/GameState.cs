@@ -11,6 +11,8 @@ public class GameState : MonoBehaviour {
 		instance = this;
 	}
 
+	public System.Action<bool> onDayChanged;
+
 	[Header("References")]
 	public CameraController cameraController;
 	public Light2D daylight;
@@ -27,6 +29,8 @@ public class GameState : MonoBehaviour {
 	private PlayerBed playerBed;
 
 	private bool isDay = false;
+	public bool IsDay => isDay;
+	public int CurrentDay { get; private set; }
 
 
 	private void Start() {
@@ -41,6 +45,7 @@ public class GameState : MonoBehaviour {
 
 	private void SetDay() {
 		isDay = true;
+		CurrentDay++;
 		nightlight.enabled = false;
 		daylight.enabled = true;
 		playerBed.bedLight.enabled = false;
@@ -49,6 +54,7 @@ public class GameState : MonoBehaviour {
 		cameraController.FollowPlayer();
 		playerMove.enabled = true;
 		playerBuild.enabled = true;
+		onDayChanged?.Invoke(isDay);
 	}
 
 	private void SetNight() {
@@ -64,6 +70,7 @@ public class GameState : MonoBehaviour {
 		playerMove.enabled = false;
 		playerBuild.enabled = false;
 
+		onDayChanged?.Invoke(isDay);
 		enemySpawner.SendWave();
 	}
 

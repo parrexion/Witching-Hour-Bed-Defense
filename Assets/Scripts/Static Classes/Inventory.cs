@@ -10,6 +10,9 @@ public class Inventory : MonoBehaviour {
 	public Action onInventoryUpdated;
 
 	public int maxHealth;
+	public int startWood;
+	public int startFluff;
+	public int startCandy;
 
 	private float health;
     private int wood = 0;
@@ -20,6 +23,9 @@ public class Inventory : MonoBehaviour {
     private void Awake() {
         instance = this;
 		health = maxHealth;
+		addWood(startWood);
+		addFluff(startFluff);
+		addCandy(startCandy);
 		onInventoryUpdated?.Invoke();
     }
 
