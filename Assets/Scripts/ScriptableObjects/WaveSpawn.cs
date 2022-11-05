@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName="ScriptableObjects/WaveSpawn")]
 public class WaveSpawn : ScriptableObject {
 
-    public GameObject enemy;
+    public Enemy enemy;
     public int amount;
 
 }

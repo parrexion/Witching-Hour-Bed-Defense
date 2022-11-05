@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour {
 			for (int i = 0; i < currentSpawn.amount; i++) {
 				int index = Random.Range(0, spawnPoints.Count);
 				Vector3 spawnPos = spawnPoints[index].position;
-				SpawnEnemy(spawnPos);
+				SpawnEnemy(currentSpawn.enemy, spawnPos);
 			}
 			currentWaveStage++;
 			yield return new WaitForSeconds(waves[currentWaveLevel].delay);
@@ -72,8 +72,8 @@ public class EnemySpawner : MonoBehaviour {
 		onWaveFinished?.Invoke();
 	}
 
-	public void SpawnEnemy(Vector3 pos) {
-		Enemy e = Instantiate(enemyPrefab, pos, Quaternion.identity, transform);
+	public void SpawnEnemy(Enemy prefab,  Vector3 pos) {
+		Enemy e = Instantiate(prefab, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
 		e.SetTarget(MapCreator.instance.GetBed().transform);
 		e.onDestroyed += CleanUpEnemy;
@@ -81,7 +81,7 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	public void SpawnEnemy() {
-		SpawnEnemy(spawnPoint);
+		SpawnEnemy(enemyPrefab, spawnPoint);
 	}
 
 	public void RefreshPathfinding() {
