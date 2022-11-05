@@ -45,10 +45,10 @@ public class GameState : MonoBehaviour {
 		playerBed = mapCreator.GetBed();
 		enemySpawner.onWaveFinished += WaveFinished;
 
-		SetDay();
+		SetDay(true);
 	}
 
-	private void SetDay() {
+	private void SetDay(bool firstStart = false) {
 		buildBarAnim.SetTrigger("Toggle");
 		isDay = true;
 		CurrentDay++;
@@ -63,7 +63,10 @@ public class GameState : MonoBehaviour {
 
 		onDayChanged?.Invoke(isDay);
 
-		playerMove.WakeUp(playerBed);
+		if (!firstStart) {
+			playerMove.WakeUp();
+			playerBed.WakeUp();
+		}
 	}
 
 	private void SetNight() {
@@ -82,7 +85,8 @@ public class GameState : MonoBehaviour {
 
 		onDayChanged?.Invoke(isDay);
 		enemySpawner.SendWave();
-		playerMove.GoToBed(playerBed);
+		playerMove.GoToBed();
+		playerBed.GoToSleep();
 	}
 
 	public void ToggleDay() {
