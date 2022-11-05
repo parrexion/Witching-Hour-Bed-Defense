@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 1218106486929960435}
   - component: {fileID: 1783507204}
   - component: {fileID: 1783507205}
+  - component: {fileID: 3433187857991231130}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -360,6 +361,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprt: {fileID: 1218106486929960435}
   offSet: 0
+--- !u!95 &3433187857991231130
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218106486929960433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c19f3abfd2bc48ea8e8c4902aa414c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1218106487075766376
 GameObject:
   m_ObjectHideFlags: 0

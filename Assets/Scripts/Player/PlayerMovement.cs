@@ -34,4 +34,20 @@ public class PlayerMovement : MonoBehaviour {
         }
         anim.SetFloat("yVel", rb.velocity.y);
     }
+
+    public void GoToBed(PlayerBed bed) {
+        Animator anim = bed.GetComponent<Animator>();
+        anim.Play("GoingToBed");
+        gameObject.SetActive(false);
+    }
+
+    public void WakeUp(PlayerBed bed) {
+        Animator anim = bed.GetComponent<Animator>();
+        anim.Play("PlayerWakingUp");
+        Invoke("ShowPlayer", 0.6f);
+    }
+
+    private void ShowPlayer() {
+        gameObject.SetActive(true);
+    }
 }

@@ -9,5 +9,6 @@ public class Building : ScriptableObject {
     public int woodCost, fluffCost, candyCost;
     public GameObject prefab;
     public Sprite sprite;
+    public bool blocking = true;
 
 }

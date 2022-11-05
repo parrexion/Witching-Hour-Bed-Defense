@@ -15,7 +15,7 @@ MonoBehaviour:
   label: Pillow Fort
   desc: Basic defensive building
   woodCost: 2
-  fluffCost: 0
+  fluffCost: 10
   candyCost: 0
   prefab: {fileID: 8687454195290242821, guid: c8adf16e7a0768144bcec389b9b5affb, type: 3}
   sprite: {fileID: 21300000, guid: d2aff97e2ff513d438cbecfdf0d41da5, type: 3}

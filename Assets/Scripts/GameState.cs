@@ -54,7 +54,10 @@ public class GameState : MonoBehaviour {
 		cameraController.FollowPlayer();
 		playerMove.enabled = true;
 		playerBuild.enabled = true;
+
 		onDayChanged?.Invoke(isDay);
+
+		playerMove.WakeUp(playerBed);
 	}
 
 	private void SetNight() {
@@ -72,6 +75,7 @@ public class GameState : MonoBehaviour {
 
 		onDayChanged?.Invoke(isDay);
 		enemySpawner.SendWave();
+		playerMove.GoToBed(playerBed);
 	}
 
 	public void ToggleDay() {
