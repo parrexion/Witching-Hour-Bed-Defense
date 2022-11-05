@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: 00_DefaultEnemy
   m_EditorClassIdentifier: 
   maxHealth: 25
-  damage: 1
+  damage: 20
   attackDelay: 0.5
   moveSpeed: 3
-  droppedItems:
-  - {fileID: 3229886731874584385, guid: e6e4af0e7a1806b4081d67e65c176c9f, type: 3}
-  - {fileID: 3787167988184369034, guid: 60a3b58b6888ec4478a6e6ca7239fecf, type: 3}
-  - {fileID: 2596386700328267867, guid: 19bca1bb2c23fcc46b6d3d61c485eaf0, type: 3}
+  dropWood: 0
+  dropFluff: 0
+  dropCandy: 0

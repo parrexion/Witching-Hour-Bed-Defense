@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 1Monster
   m_EditorClassIdentifier: 
   enemy: {fileID: 6725856788929023056, guid: 44873157d57c07c4eaf4bc5e8043eeaf, type: 3}
-  amount: 2
+  amount: 1
