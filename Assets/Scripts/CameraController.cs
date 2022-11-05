@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour {
 	[SerializeField] private Vector3 offset;
 	[SerializeField] private Vector2 clampOffset;
 	[SerializeField] private float followCamSize;
+	[SerializeField] private float bedCamSizeOffset;
 
 	[Header("Animation settings")]
 	[SerializeField] private float maxMoveSpeed = 1f;
@@ -26,7 +27,7 @@ public class CameraController : MonoBehaviour {
 	public void Setup(Transform player, Transform bed, float bedCamSize, Rect clampArea) {
 		this.player = player;
 		this.bed = bed;
-		this.bedCamSize = bedCamSize;
+		this.bedCamSize = bedCamSize + bedCamSizeOffset;
 		this.clampArea = clampArea;
 
 		this.clampArea.x = followCamSize + 1 - clampOffset.x;

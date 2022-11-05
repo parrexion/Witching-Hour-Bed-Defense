@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,23 @@ public enum SFX { PICKUP, BUTTON, DAMAGE, }
 
 public class AudioController : MonoBehaviour {
 
-
 	public static AudioController instance = null;
 	private void Awake() {
-		instance = this;
+		if (instance != null) {
+			Destroy(gameObject);
+		}
+		else {
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
 	}
 
 	public AudioLibrary library;
 	public AudioSource[] musicSources;
 	public AudioSource sfxSource;
 
-	private int activeMusic;
+	[Header("Settings")]
+	public float fadeSpeed = 1f;
 
 
 	public void SetMusicVolume(float volume) {
@@ -31,8 +38,29 @@ public class AudioController : MonoBehaviour {
 	}
 
 	public void PlayMusic(Music music) {
-		musicSources[activeMusic].clip = library.GetMusic(music);
-		musicSources[activeMusic].Play();
+		musicSources[0].clip = library.GetMusic(music);
+		musicSources[0].Play();
+	}
+
+	public void PlayMusicWithFadeout(Music music) {
+		AudioClip musicClip = library.GetMusic(music);
+		Sequence seq = DOTween.Sequence();
+		seq.Append(musicSources[0].DOFade(0f, fadeSpeed));
+		seq.AppendCallback(() => { musicSources[0].clip = musicClip; });
+		seq.Append(musicSources[0].DOFade(1f, fadeSpeed));
+	}
+
+	public void PlayMusicWithTransition(Music music, Music transition) {
+		AudioClip musicClip = library.GetMusic(music);
+		AudioClip transitionClip = library.GetMusic(transition);
+		musicSources[1].clip = transitionClip;
+		musicSources[1].Play();
+		Sequence seq = DOTween.Sequence();
+		seq.Append(musicSources[0].DOFade(0f, fadeSpeed));
+		seq.InsertCallback(transitionClip.length, () => {
+			musicSources[0].clip = musicClip;
+			musicSources[0].Play();
+		});
 	}
 
 	public void PlaySfx(SFX sfx) {
