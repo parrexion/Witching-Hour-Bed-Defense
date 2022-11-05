@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2596386700328267864}
   - component: {fileID: 2596386700328267865}
   - component: {fileID: 2596386700328267866}
+  - component: {fileID: 7424254589919018460}
   m_Layer: 0
   m_Name: Fluff
   m_TagString: Untagged
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f090bea6e9acd44b966f41cfee8b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   amount: 10
   rb: {fileID: 2596386700328267864}
 --- !u!61 &2596386700328267866
@@ -149,3 +150,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7424254589919018460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596386700328267867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a12ddfa4b00f484a82aeb5080187ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 15

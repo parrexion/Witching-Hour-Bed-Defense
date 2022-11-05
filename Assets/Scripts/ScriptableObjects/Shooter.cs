@@ -4,8 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName="ScriptableObjects/Shooter")]
 public class Shooter : Building {
-    public string label;
-    public Sprite icon;
     public float damagePerBullet;
     public float bulletSpeed;
     public float firingDelay;
