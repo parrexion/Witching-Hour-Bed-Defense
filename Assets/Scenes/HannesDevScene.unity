@@ -565,14 +565,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 159661827, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 4e3e8d7581de91b4abe7daa44b2d5363, type: 2}
-    - target: {fileID: 159661827, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 643256184692440850, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
