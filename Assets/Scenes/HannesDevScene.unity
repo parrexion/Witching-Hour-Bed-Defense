@@ -597,10 +597,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 793815243, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
-      propertyPath: timeBetweenCharacters
-      value: 0.005
-      objectReference: {fileID: 0}
     - target: {fileID: 643256184692440850, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
