@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class MapCreator : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class MapCreator : MonoBehaviour {
 	public Vector2Int MaxSize = new Vector2Int(10, 10);
 
 	[Header("Prefabs")]
+	public AstarPath astar;
 	public PlayerMovement playerPrefab;
 	public MapTileVisual tilePrefab;
 	public GameObject bedPrefab;
@@ -25,10 +27,11 @@ public class MapCreator : MonoBehaviour {
 
 	private void Start() {
 		cam.transform.position = new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, -10f);
-		cam.orthographicSize = (Mathf.Max(MaxSize.x, MaxSize.y) + 1) * 0.5f;
+		cam.orthographicSize = (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f;
 		CreateMap(MaxSize.x, MaxSize.y);
 		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity, transform);
 		otherStuff.Add(bed);
+
 		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity, transform);
 	}
 
@@ -50,6 +53,10 @@ public class MapCreator : MonoBehaviour {
 				pos++;
 			}
 		}
+	}
+
+	public Transform GetPlayer() {
+		return player.transform;
 	}
 
 	private int GetIndex(int x, int y) {

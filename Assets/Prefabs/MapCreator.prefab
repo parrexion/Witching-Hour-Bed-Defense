@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  MaxSize: {x: 10, y: 10}
+  MaxSize: {x: 20, y: 15}
+  astar: {fileID: 3837832651054829449, guid: 8d707ecf927cb4344866e814c76dbf0e, type: 3}
+  playerPrefab: {fileID: 8588812248532441123, guid: 13f11b88de355fd4fbbcd68f76e2a884, type: 3}
   tilePrefab: {fileID: 7528572091131114908, guid: b7f243e1e9ff40a4e8b10f39a74bf759, type: 3}
-  bedPrefab: {fileID: 9021334226090458488, guid: 7ac67f91a285e194eac962f7fb6e6552, type: 3}
+  bedPrefab: {fileID: 1218106486929960433, guid: 164fdbafc798f5645994bc8569f4cf6b, type: 3}

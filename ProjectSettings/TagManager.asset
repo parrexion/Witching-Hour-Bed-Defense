@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
+  - Player
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   - name: Buildings
     uniqueID: 3348137219
     locked: 0
-  - name: Player
+  - name: Moving
     uniqueID: 3423783451
+    locked: 0
+  - name: UI
+    uniqueID: 1012718935
     locked: 0
