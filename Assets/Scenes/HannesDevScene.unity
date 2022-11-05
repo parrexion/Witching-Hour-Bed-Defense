@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &95310975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4656238161208723530, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1136136122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &97646985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +321,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &306680491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7947507156966545085, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1136136122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &345244962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9028520726420382823, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1136136122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &561225487 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3729328736677850281, guid: 674564626e1a2cf4185f588ff3cce355, type: 3}
@@ -336,12 +351,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: spawnPoints.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1903519550}
+      objectReference: {fileID: 306680491}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 345244962}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 95310975}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1718356401}
     - target: {fileID: 1663400176697473473, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -529,37 +556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
---- !u!1 &1903519549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1903519550}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1903519550
+--- !u!4 &1718356401 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1395832997321042463, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1136136122}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903519549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2075788628
 PrefabInstance:
   m_ObjectHideFlags: 0
