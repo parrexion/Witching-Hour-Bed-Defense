@@ -135,12 +135,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 975659068, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 677e12e8600d2a7438c89a0df68ff864, type: 2}
     - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
@@ -251,8 +263,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5448780818556568772, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+--- !u!95 &97646986 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 975659068, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
+  m_PrefabInstance: {fileID: 97646985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301979138
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +523,10 @@ PrefabInstance:
       propertyPath: mapCreator
       value: 
       objectReference: {fileID: 561225487}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: buildBarAnim
+      value: 
+      objectReference: {fileID: 97646986}
     - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: enemySpawner
       value: 

@@ -19,6 +19,7 @@ public class GameState : MonoBehaviour {
 	public Light2D nightlight;
 	public MapCreator mapCreator;
 	public EnemySpawner enemySpawner;
+	public Animator buildBarAnim;
 
 	[Header("Settings")]
 	public float toggleTime = 1f;
@@ -79,6 +80,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	public void ToggleDay() {
+		buildBarAnim.SetTrigger("Toggle");
 		if (isDay)
 			SetNight();
 		else
