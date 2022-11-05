@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour {
     private int fluff = 0;
     private int candy = 0;
 
-	private int health;
+	private float health;
 
     private void Start() {
         instance = this;
@@ -22,22 +22,22 @@ public class Inventory : MonoBehaviour {
 
 	// Health functions
 
-	public void addHealth(int newHealth) {
+	public void addHealth(float newHealth) {
 		health = Math.Min(health + newHealth, maxHealth);
 		InventoryCanvas.updateText();
 	}
 
-	public void removeHealth(int damage) {
+	public void removeHealth(float damage) {
 		health = Math.Max(health - damage, 0);
 		InventoryCanvas.updateText();
 	}
 
-	public void setHealth(int newHealth) {
+	public void setHealth(float newHealth) {
 		health = newHealth; // Allowing overriding max health
 		InventoryCanvas.updateText();
 	}
 
-	public int getHealth() {
+	public float getHealth() {
 		return health;
     }
 

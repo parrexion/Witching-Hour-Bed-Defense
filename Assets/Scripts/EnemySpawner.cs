@@ -41,6 +41,7 @@ public class EnemySpawner : MonoBehaviour {
 				SpawnEnemy(currentSpawn.enemy, spawnPos);
 			}
 			currentWaveStage++;
+			yield return new WaitForSeconds(currentWave.delay);
 			StartCoroutine(spawn());
 		}
 		yield return new WaitForSeconds(1f);
@@ -49,7 +50,7 @@ public class EnemySpawner : MonoBehaviour {
 	public void SpawnEnemy(GameObject enemy, Vector3 pos) {
 		Enemy e = Instantiate(enemyPrefab, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
-		e.SetTarget(MapCreator.instance.GetPlayer());
+		e.SetTarget(MapCreator.instance.GetBed());
 		e.onDestroyed += CleanUpEnemy;
 		enemies.Add(e);
 		totalEnemies++;

@@ -20,6 +20,7 @@ public class MapCreator : MonoBehaviour {
 	public GameObject bedPrefab;
 
 	private PlayerMovement player;
+	public GameObject bed;
 	private MapTile[] map;
 	private MapTileVisual[] mapVisual;
 	private List<GameObject> otherStuff = new List<GameObject>();
@@ -28,6 +29,7 @@ public class MapCreator : MonoBehaviour {
 	private void Start() {
 		CreateMap(MaxSize.x, MaxSize.y);
 		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
+		this.bed = bed;
 		otherStuff.Add(bed);
 
 		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity);
@@ -56,6 +58,9 @@ public class MapCreator : MonoBehaviour {
 
 	public Transform GetPlayer() {
 		return player.transform;
+	}
+	public Transform GetBed() {
+		return bed.transform;
 	}
 
 	private int GetIndex(int x, int y) {
