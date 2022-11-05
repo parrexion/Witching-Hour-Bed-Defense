@@ -31,4 +31,9 @@ public class MapTile {
 		currentBuilding = building;
 		onBuildingChanged?.Invoke(building);
 	}
+
+	public void SetBed(BedBuilding bed) {
+		currentBuilding = bed;
+		onBuildingChanged?.Invoke(bed);
+	}
 }

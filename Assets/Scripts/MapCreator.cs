@@ -18,6 +18,7 @@ public class MapCreator : MonoBehaviour {
 	public PlayerMovement playerPrefab;
 	public MapTileVisual tilePrefab;
 	public PlayerBed bedPrefab;
+	public BedBuilding bedBuilding;
 
 	private PlayerMovement player;
 	private PlayerBed bed;
@@ -29,9 +30,25 @@ public class MapCreator : MonoBehaviour {
 		if (forced) {
 			CreateMap(MaxSize.x, MaxSize.y);
 		}
+		else {
+			int pos = 0;
+			for (int y = 0; y < MaxSize.y; y++) {
+				for (int x = 0; x < MaxSize.x; x++) {
+					map[pos].onBuildingChanged += mapVisuals[pos].SetBuilding;
+					pos++;
+				}
+			}
+		}
 		bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
 		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity);
 		cam.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
+
+		//Create bed area
+		for (int i = MaxSize.x / 2 - 2, target = MaxSize.x / 2 + 2; i < target; i++) {
+			for (int j = MaxSize.x / 2 - 1, target2 = MaxSize.x / 2 + 2; j < target2; j++) {
+
+			}
+		}
 	}
 
 

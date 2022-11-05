@@ -28,6 +28,9 @@ public class MapTileVisual : MonoBehaviour {
 				Destroy(building);
 			}
 		}
+		else if (build is BedBuilding) {
+			tileSprite.enabled = false;
+		}
 		else {
 			tileSprite.enabled = false;
 			if(building != null) {
