@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2e9a726b28a0f446a5b44d21d147d31, type: 3}
-  m_Name: BuildingLibrary
+  m_Script: {fileID: 11500000, guid: c858a0e9dc8c4ad4883dac13e7ef04cc, type: 3}
+  m_Name: 01_Bricks
   m_EditorClassIdentifier: 
-  buildings:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 352045c84dc22bd42ab978dfe2a6c04c, type: 2}
-  - {fileID: 11400000, guid: 0fd8c8f1773664a0f9a6b5e3c7c92815, type: 2}
+  label: Bricks
+  desc: Bricks on the ground
+  woodCost: 5
+  fluffCost: 0
+  candyCost: 0
+  prefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 4229d4015db41417babad8cc9c1bbea3, type: 3}
