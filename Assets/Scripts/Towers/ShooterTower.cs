@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class ShooterTower : MonoBehaviour {
     public GameObject projectile;
-    public float firingDelay;
-    public float bulletSpeed;
-    public enum Targetting{Random, CloseToTower, CloseToBed, Weak, Strong};
-    public Targetting targetting;
+    public Shooter shooter;
 
     private void Start() {
         StartCoroutine(fire());  
     }
 
     IEnumerator fire() {
-        yield return new WaitForSeconds(firingDelay);
+        yield return new WaitForSeconds(shooter.firingDelay);
         Transform enemy = getEnemy();
         if(enemy == null) {StartCoroutine(fire());}
         Vector2 angle = enemy.position - transform.position;
         angle = Vector3.Normalize(angle);
         GameObject tempBullet = Instantiate(projectile, transform.position, Quaternion.identity);
-        tempBullet.GetComponent<Rigidbody2D>().velocity = angle*bulletSpeed;
+        tempBullet.GetComponent<Rigidbody2D>().velocity = angle*shooter.bulletSpeed;
+        tempBullet.GetComponent<TowerProjectile>().damage = shooter.damagePerBullet;
         StartCoroutine(fire());
     }
 
     private Transform getEnemy() {
-        switch((int)targetting) {
+        switch((int)shooter.targetting) {
             case 0:
                 return(getRandomEnemy());
         }
