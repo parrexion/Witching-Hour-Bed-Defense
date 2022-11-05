@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour {
 	public float finishDelay = 2f;
 
 	public int totalEnemies;
+	public int totalEnemiesSpawned;
 	private List<Enemy> enemies = new List<Enemy>();
 	private Camera mainCam;
 
@@ -48,10 +49,15 @@ public class EnemySpawner : MonoBehaviour {
 	IEnumerator Spawn() {
 		if (currentWaveLevel >= waves.Length)
 			currentWaveLevel = waves.Length;
-		totalEnemies = waves[currentWaveLevel].spawns.Count;
+		totalEnemies = 0;
+		totalEnemiesSpawned = 0;
+		for (int i = 0; i < waves[currentWaveLevel].spawns.Count; i++) {
+			totalEnemies += waves[currentWaveLevel].spawns[i].amount;
+		}
 		yield return new WaitForSeconds(3f);
 
-		while (waves[currentWaveLevel].spawns.Count > currentWaveStage) {
+		currentWaveStage = 0;
+		while (currentWaveStage < waves[currentWaveLevel].spawns.Count) {
 			WaveSpawn currentSpawn = waves[currentWaveLevel].spawns[currentWaveStage];
 			for (int i = 0; i < currentSpawn.amount; i++) {
 				int index = Random.Range(0, spawnPoints.Count);
@@ -72,7 +78,8 @@ public class EnemySpawner : MonoBehaviour {
 		onWaveFinished?.Invoke();
 	}
 
-	public void SpawnEnemy(Enemy prefab,  Vector3 pos) {
+	public void SpawnEnemy(Enemy prefab, Vector3 pos) {
+		totalEnemiesSpawned++;
 		Enemy e = Instantiate(prefab, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
 		e.SetTarget(MapCreator.instance.GetBed().transform);

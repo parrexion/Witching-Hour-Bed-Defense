@@ -12049,6 +12049,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 8588812248532441123, guid: 13f11b88de355fd4fbbcd68f76e2a884, type: 3}
   tilePrefab: {fileID: 7528572091131114908, guid: b7f243e1e9ff40a4e8b10f39a74bf759, type: 3}
   bedPrefab: {fileID: 1894512458144202542, guid: 164fdbafc798f5645994bc8569f4cf6b, type: 3}
+  bedBuilding: {fileID: 11400000, guid: ea4f4a22e637c4e409be075ee87d1455, type: 2}
   map:
   - x: 0
     y: 0
