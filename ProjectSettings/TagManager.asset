@@ -48,6 +48,9 @@ TagManager:
   - name: Moving
     uniqueID: 3423783451
     locked: 0
+  - name: Eyes
+    uniqueID: 1900048411
+    locked: 0
   - name: UI
     uniqueID: 1012718935
     locked: 0

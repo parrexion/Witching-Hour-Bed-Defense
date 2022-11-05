@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &236935885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7947507156966545085, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1059255327980188210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &249553435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,6 +518,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
+--- !u!4 &590502968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4656238161208723530, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1059255327980188210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &593726014 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1395832997321042463, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1059255327980188210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &847417969 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9028520726420382823, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+  m_PrefabInstance: {fileID: 1059255327980188210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1127936366
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +681,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 236935885}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 847417969}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 590502968}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: spawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 593726014}
     - target: {fileID: 1663400176697473473, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: m_Name
       value: EnemySpawner

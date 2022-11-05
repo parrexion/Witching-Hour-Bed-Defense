@@ -21,6 +21,7 @@ public class MapTileVisual : MonoBehaviour {
 	}
 
 	public void SetBuilding(Building build) {
+		currentBuilding = build;
 		if (build == null) {
 			tileSprite.enabled = true;
 			if(building != null) {

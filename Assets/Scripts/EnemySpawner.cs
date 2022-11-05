@@ -13,16 +13,20 @@ public class EnemySpawner : MonoBehaviour {
 		instance = this;
 	}
 
+	public System.Action onWaveFinished;
+
 	public AstarPath astar;
 	public Vector3 spawnPoint;
 	public Enemy enemyPrefab;
-	public Wave currentWave;
+	public Wave[] waves;
 	public List<Transform> spawnPoints = new List<Transform>();
+	public float finishDelay = 2f;
 
 	public int totalEnemies;
 	private List<Enemy> enemies = new List<Enemy>();
 	private Camera mainCam;
 
+	private int currentWaveLevel;
 	private int currentWaveStage = 0;
 
 
@@ -33,34 +37,47 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	public void SendWave() {
-		StartCoroutine(spawn());
+		RefreshPathfinding();
+		StartCoroutine(Spawn());
 	}
 
-	IEnumerator spawn() {
-		if(currentWave.spawns.Count > currentWaveStage) {
-			WaveSpawn currentSpawn = currentWave.spawns[currentWaveStage];
-			for(int i = 0; i < currentSpawn.amount; i++) {
+	public bool WaveDone() {
+		return totalEnemies == 0;
+	}
+
+	IEnumerator Spawn() {
+		if (currentWaveStage >= waves.Length)
+			currentWaveStage = waves.Length;
+		totalEnemies = waves[currentWaveLevel].spawns.Count;
+		yield return new WaitForSeconds(3f);
+
+		while (waves[currentWaveLevel].spawns.Count > currentWaveStage) {
+			WaveSpawn currentSpawn = waves[currentWaveLevel].spawns[currentWaveStage];
+			for (int i = 0; i < currentSpawn.amount; i++) {
 				int index = Random.Range(0, spawnPoints.Count);
 				Vector3 spawnPos = spawnPoints[index].position;
-				SpawnEnemy(currentSpawn.enemy, spawnPos);
+				SpawnEnemy(spawnPos);
 			}
 			currentWaveStage++;
-			yield return new WaitForSeconds(currentWave.delay);
-			StartCoroutine(spawn());
+			yield return new WaitForSeconds(waves[currentWaveLevel].delay);
 		}
-		yield return new WaitForSeconds(1f);
 	}
 
-	public void SpawnEnemy(GameObject enemy, Vector3 pos) {
+	IEnumerator DelayedWaveFinished() {
+		yield return new WaitForSeconds(finishDelay);
+		onWaveFinished?.Invoke();
+	}
+
+	public void SpawnEnemy(Vector3 pos) {
 		Enemy e = Instantiate(enemyPrefab, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
 		e.SetTarget(MapCreator.instance.GetBed().transform);
 		e.onDestroyed += CleanUpEnemy;
 		enemies.Add(e);
-		totalEnemies++;
 	}
+
 	public void SpawnEnemy() {
-		SpawnEnemy(enemyPrefab.gameObject, spawnPoint);
+		SpawnEnemy(spawnPoint);
 	}
 
 	public void RefreshPathfinding() {
@@ -70,11 +87,16 @@ public class EnemySpawner : MonoBehaviour {
 	private void CleanUpEnemy(Enemy enemy) {
 		enemies.Remove(enemy);
 		totalEnemies--;
+
+		if (totalEnemies == 0) {
+			currentWaveLevel++;
+			StartCoroutine(DelayedWaveFinished());
+		}
 	}
 
-	public List<Enemy> getEnemies() {
-		for(int i = enemies.Count-1; i >= 0; i--) {
-			if(enemies[i] == null) {
+	public List<Enemy> GetEnemies() {
+		for (int i = enemies.Count - 1; i >= 0; i--) {
+			if (enemies[i] == null) {
 				enemies.RemoveAt(i);
 			}
 		}

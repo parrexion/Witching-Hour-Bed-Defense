@@ -31,7 +31,7 @@ public class ShooterTower : MonoBehaviour {
     }
 
     private Transform getRandomEnemy() {
-        List<Enemy> enemies = EnemySpawner.instance.getEnemies();
+        List<Enemy> enemies = EnemySpawner.instance.GetEnemies();
         if(enemies.Count <= 0) {return null;}
         int i = Random.Range(0, enemies.Count);
         return(enemies[i].transform);

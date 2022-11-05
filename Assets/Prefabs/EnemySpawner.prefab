@@ -48,7 +48,9 @@ MonoBehaviour:
   astar: {fileID: 2474496907353790631}
   spawnPoint: {x: 0, y: 0, z: 0}
   enemyPrefab: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-  currentWave: {fileID: 11400000, guid: 1ed91db981c6fb64da329d61d5b9cc70, type: 2}
+  waves:
+  - {fileID: 11400000, guid: 1ed91db981c6fb64da329d61d5b9cc70, type: 2}
+  - {fileID: 11400000, guid: 296e0e7181864474d93d5046503dd2b3, type: 2}
   spawnPoints: []
   totalEnemies: 0
 --- !u!1001 &1663400176660043566

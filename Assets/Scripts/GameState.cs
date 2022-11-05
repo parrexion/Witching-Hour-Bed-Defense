@@ -34,6 +34,7 @@ public class GameState : MonoBehaviour {
 		playerMove = mapCreator.GetPlayerMove();
 		playerBuild = playerMove.GetComponent<PlayerBuilder>();
 		playerBed = mapCreator.GetBed();
+		enemySpawner.onWaveFinished += WaveFinished;
 
 		SetDay();
 	}
@@ -63,7 +64,7 @@ public class GameState : MonoBehaviour {
 		playerMove.enabled = false;
 		playerBuild.enabled = false;
 
-		//enemySpawner.
+		enemySpawner.SendWave();
 	}
 
 	public void ToggleDay() {
@@ -71,6 +72,10 @@ public class GameState : MonoBehaviour {
 			SetNight();
 		else
 			SetDay();
+	}
+
+	private void WaveFinished() {
+		SetDay();
 	}
 
 }
