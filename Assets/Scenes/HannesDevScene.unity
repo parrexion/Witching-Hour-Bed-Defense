@@ -135,30 +135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 557826111007546112, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -425
-      objectReference: {fileID: 0}
-    - target: {fileID: 557826111007546112, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -187.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376299917267511148, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_Spacing.x
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376299917267511148, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_Spacing.y
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376299917267511148, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_CellSize.x
-      value: 140
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376299917267511148, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
-      propertyPath: m_CellSize.y
-      value: 140
-      objectReference: {fileID: 0}
     - target: {fileID: 1385850336912609549, guid: 01811b4e8af95cd40b0104c53180f651, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -510,22 +486,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1181471829, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181471829, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181471829, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181471829, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.25
-      objectReference: {fileID: 0}
     - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: mapCreator
       value: 
@@ -605,6 +565,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159661827, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e3e8d7581de91b4abe7daa44b2d5363, type: 2}
+    - target: {fileID: 159661827, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 643256184692440850, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
