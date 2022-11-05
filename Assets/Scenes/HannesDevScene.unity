@@ -530,6 +530,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: startWood
+      value: 99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: startCandy
+      value: 99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: startFluff
+      value: 99999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
 --- !u!4 &1718356401 stripped
