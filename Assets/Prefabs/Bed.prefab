@@ -695,6 +695,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3d77ca81671b24fab8b4917f0b7240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMessages:
+  - Ouch
+  - Nice tower placement Einstein...
+  - HEY, WATCH IT!
+  - STOP THEM!
 --- !u!50 &6347059935295240473
 Rigidbody2D:
   serializedVersion: 4
