@@ -54,6 +54,21 @@ public class Inventory : MonoBehaviour {
 		return health == 0;
 	}
 
+
+	#region Resources
+
+	public bool CanAfford(Building build) {
+		return hasWood(build.woodCost) && hasFluff(build.fluffCost) && hasCandy(build.candyCost);
+	}
+
+	public void Purchase(Building build) {
+		removeWood(build.woodCost);
+		removeFluff(build.fluffCost);
+		removeCandy(build.candyCost);
+
+		onInventoryUpdated?.Invoke();
+	}
+
 	// Wood functions
 	public bool hasWood(int amount) {
 		return wood >= amount;
@@ -126,5 +141,7 @@ public class Inventory : MonoBehaviour {
 	public int getCandy() {
 		return candy;
 	}
+
+	#endregion
 
 }

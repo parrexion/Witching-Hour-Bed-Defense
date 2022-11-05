@@ -18,7 +18,10 @@ public class PlayerBuilder : MonoBehaviour {
 				tile.AddBuilding(selectedBuilding);
 			}
 			else if (selectedBuilding != null && !tile.Blocked) {
-				tile.AddBuilding(selectedBuilding);
+				if (Inventory.instance.CanAfford(selectedBuilding)) {
+					tile.AddBuilding(selectedBuilding);
+					Inventory.instance.Purchase(selectedBuilding);
+				}
 			}
 		}
 	}

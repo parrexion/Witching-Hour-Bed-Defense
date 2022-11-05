@@ -11,6 +11,7 @@ public class BuildUI : MonoBehaviour {
 
 	public BuildingLibrary buildingLibrary;
 	public TemplateRecycler buildingTemplater;
+	public BuildingInfoUI buildingInfo;
 
 	private int selectedIndex;
 
@@ -21,6 +22,9 @@ public class BuildUI : MonoBehaviour {
 			entry.SetBuilding(buildingLibrary.buildings[i]);
 		}
 		RefreshHighlight();
+		RefreshAfford();
+
+		Inventory.instance.onInventoryUpdated += RefreshAfford;
 	}
 
 	private void Update() {
@@ -33,6 +37,7 @@ public class BuildUI : MonoBehaviour {
 	}
 
 	private void RefreshHighlight() {
+		buildingInfo.SetInfo(buildingLibrary.buildings[selectedIndex]);
 		for (int i = 0; i < buildingTemplater.Count; i++) {
 			buildingTemplater.GetEntry<BuildingEntry>(i).SetHighlighted(i == selectedIndex);
 		}
@@ -50,5 +55,17 @@ public class BuildUI : MonoBehaviour {
 
 	public Building GetCurrentBuilding() {
 		return buildingLibrary.buildings[selectedIndex];
+	}
+
+	private void RefreshAfford() {
+		for (int i = 0; i < buildingTemplater.Count; i++) {
+			if (buildingLibrary.buildings[i] != null) {
+				bool affordable = Inventory.instance.CanAfford(buildingLibrary.buildings[i]);
+				buildingTemplater.GetEntry<BuildingEntry>(i).SetAffordable(affordable);
+			}
+			else {
+				buildingTemplater.GetEntry<BuildingEntry>(i).SetAffordable(true);
+			}
+		}
 	}
 }

@@ -7,6 +7,7 @@ public class BuildingEntry : MonoBehaviour {
 
 	public Image buildingImage;
 	public Image highlight;
+	public Image notAffordable;
 
 
 	public void SetBuilding(Building build) {
@@ -21,5 +22,9 @@ public class BuildingEntry : MonoBehaviour {
 
 	public void SetHighlighted(bool active) {
 		highlight.enabled = active;
+	}
+
+	public void SetAffordable(bool canAfford) {
+		notAffordable.enabled = !canAfford;
 	}
 }
