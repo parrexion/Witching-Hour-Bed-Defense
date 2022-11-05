@@ -99,9 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 5238896459246754223, guid: 9bcf9196ca3c5d84ab66a86a6beecc5d, type: 3}
-  firingDelay: 0.25
-  bulletSpeed: 15
-  targetting: 0
+  shooter: {fileID: 11400000, guid: 0ac627baac5d82542b71044951841bc2, type: 2}
 --- !u!114 &3771320641584548967
 MonoBehaviour:
   m_ObjectHideFlags: 0

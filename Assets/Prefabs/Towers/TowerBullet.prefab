@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5238896459246754220}
   - component: {fileID: 5238896459246754211}
   - component: {fileID: 5238896459246754210}
+  - component: {fileID: 8095415805703853346}
   m_Layer: 0
   m_Name: TowerBullet
   m_TagString: Untagged
@@ -137,3 +138,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2.5
+--- !u!114 &8095415805703853346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238896459246754223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a12ddfa4b00f484a82aeb5080187ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 10

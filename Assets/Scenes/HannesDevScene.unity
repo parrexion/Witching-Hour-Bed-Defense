@@ -330,12 +330,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad684873721a93c47b08748cd3257257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  bed: {fileID: 0}
-  offset: {x: 0, y: 0, z: -5}
   cam: {fileID: 567964715}
+  offset: {x: 0, y: 0, z: -5}
   followCamSize: 5
-  bedCamSize: 10
+  maxMoveSpeed: 8
+  zoomInSpeed: 1
+  zoomOutSpeed: 1
+  clampArea:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!1001 &597337466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -351,6 +357,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 567964715}
+    - target: {fileID: 3729328736677850281, guid: 674564626e1a2cf4185f588ff3cce355, type: 3}
+      propertyPath: camController
+      value: 
+      objectReference: {fileID: 567964718}
     - target: {fileID: 3729328736677850294, guid: 674564626e1a2cf4185f588ff3cce355, type: 3}
       propertyPath: m_RootOrder
       value: 7
