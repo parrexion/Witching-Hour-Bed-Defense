@@ -6,6 +6,10 @@ public class PlayerMovement : MonoBehaviour {
     
     [SerializeField]
     private float moveSpeed;
+    [SerializeField]
+    private Animator anim;
+    [SerializeField]
+    private SpriteRenderer sprt;
     private Rigidbody2D rb;
 
     private float xVel, yVel;
@@ -22,5 +26,12 @@ public class PlayerMovement : MonoBehaviour {
         Vector2 normalized = new Vector2(xVel, yVel);
         normalized = Vector3.Normalize(normalized);
         rb.velocity = normalized * moveSpeed;
+        anim.SetFloat("xVel", Mathf.Abs(rb.velocity.x));
+        if(xVel > 0) {
+            sprt.flipX = false;
+        } else if(xVel < 0) {
+            sprt.flipX = true;
+        }
+        anim.SetFloat("yVel", rb.velocity.y);
     }
 }
