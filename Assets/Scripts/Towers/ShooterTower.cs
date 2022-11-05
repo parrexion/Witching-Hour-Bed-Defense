@@ -13,7 +13,7 @@ public class ShooterTower : MonoBehaviour {
     IEnumerator fire() {
         yield return new WaitForSeconds(shooter.firingDelay);
         Transform enemy = getEnemy();
-        if(enemy == null) {StartCoroutine(fire());}
+        if(enemy == null) {StartCoroutine(fire()); yield break;}
         Vector2 angle = enemy.position - transform.position;
         angle = Vector3.Normalize(angle);
         GameObject tempBullet = Instantiate(projectile, transform.position, Quaternion.identity);

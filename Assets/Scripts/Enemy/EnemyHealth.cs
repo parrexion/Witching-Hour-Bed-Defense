@@ -19,12 +19,13 @@ public class EnemyHealth : MonoBehaviour {
     }
 
     public void damageEnemy(float damage) {
+        Debug.Log("Damaged " + damage);
         health -= damage;
+        slider.value = (health / enemy.maxHealth);
+        fill.color = gradient.Evaluate(health / enemy.maxHealth);
         if(health <= 0) {
             die();
         }
-        slider.value = (health / (float)enemy.maxHealth);
-        fill.color = gradient.Evaluate(health / (float)enemy.maxHealth);
     }
     private void die() {
         int i = Random.Range(0, enemy.droppedItems.Count);

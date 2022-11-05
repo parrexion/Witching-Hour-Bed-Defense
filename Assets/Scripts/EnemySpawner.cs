@@ -16,24 +16,46 @@ public class EnemySpawner : MonoBehaviour {
 	public AstarPath astar;
 	public Vector3 spawnPoint;
 	public Enemy enemyPrefab;
+	public Wave currentWave;
+	public List<Transform> spawnPoints = new List<Transform>();
 
 	public int totalEnemies;
 	private List<Enemy> enemies = new List<Enemy>();
 	private Camera mainCam;
 
+	private int currentWaveStage = 0;
+
 
 
 	private void Start() {
 		mainCam = Camera.main;
+		StartCoroutine(spawn());
 	}
 
-	public void SpawnEnemy() {
-		Enemy e = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity, transform);
+	IEnumerator spawn() {
+		if(currentWave.spawns.Count > currentWaveStage) {
+			WaveSpawn currentSpawn = currentWave.spawns[currentWaveStage];
+			for(int i = 0; i < currentSpawn.amount; i++) {
+				int index = Random.Range(0, spawnPoints.Count);
+				Vector3 spawnPos = spawnPoints[index].position;
+				SpawnEnemy(currentSpawn.enemy, spawnPos);
+			}
+			currentWaveStage++;
+			StartCoroutine(spawn());
+		}
+		yield return new WaitForSeconds(1f);
+	}
+
+	public void SpawnEnemy(GameObject enemy, Vector3 pos) {
+		Enemy e = Instantiate(enemyPrefab, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
 		e.SetTarget(MapCreator.instance.GetPlayer());
 		e.onDestroyed += CleanUpEnemy;
 		enemies.Add(e);
 		totalEnemies++;
+	}
+	public void SpawnEnemy() {
+		SpawnEnemy(enemyPrefab.gameObject, spawnPoint);
 	}
 
 	public void RefreshPathfinding() {
