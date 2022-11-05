@@ -8,6 +8,7 @@ public class BedTrigger : MonoBehaviour {
             Enemy enemy = other.GetComponent<Enemy>();
             Inventory.instance.removeHealth(enemy.GetDamage());
             enemy.ReachedGoal();
+            ChatBubble.instance.displayMessage("Nice tower placement Einstein...");
         }
     }
 

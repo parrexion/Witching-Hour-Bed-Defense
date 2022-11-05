@@ -7,7 +7,6 @@ public class ChatBubble : MonoBehaviour {
     public static ChatBubble instance;
     private void Start() {
         instance = this;
-        show();
     }
 
     public TextMeshProUGUI txt;
@@ -24,6 +23,8 @@ public class ChatBubble : MonoBehaviour {
     }
 
     public void displayMessage(string message) {
+        show();
+        CancelInvoke();
         if(lastRoutine != null) {
             StopCoroutine(lastRoutine);
             lastRoutine = null;
