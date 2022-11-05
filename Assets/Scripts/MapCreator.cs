@@ -10,7 +10,7 @@ public class MapCreator : MonoBehaviour {
 		instance = this;
 	}
 
-	public Camera cam;
+	public CameraController camController;
 	public Vector2Int MaxSize = new Vector2Int(10, 10);
 
 	[Header("Prefabs")]
@@ -26,13 +26,12 @@ public class MapCreator : MonoBehaviour {
 
 
 	private void Start() {
-		cam.transform.position = new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, -10f);
-		cam.orthographicSize = (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f;
 		CreateMap(MaxSize.x, MaxSize.y);
 		GameObject bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity, transform);
 		otherStuff.Add(bed);
 
 		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity, transform);
+		camController.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
 	}
 
 	private void CreateMap(int sizeX, int sizeY) {
