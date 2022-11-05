@@ -24,10 +24,10 @@ public class BuildUI : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (Input.GetButtonDown("Fire1")) {
+		if (Input.GetButtonDown("Fire1") || Input.GetAxis("Mouse ScrollWheel") > 0f) {
 			ChangeBuilding(-1);
 		}
-		else if (Input.GetButtonDown("Fire2")) {
+		else if (Input.GetButtonDown("Fire2") || Input.GetAxis("Mouse ScrollWheel") < 0f) {
 			ChangeBuilding(1);
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapTileVisual : MonoBehaviour {
 
 	public SpriteRenderer tileSprite;
-	public SpriteRenderer building;
+	public GameObject building;
 	public Collider2D buildingCollider;
 
 	private Building currentBuilding;
@@ -23,14 +23,17 @@ public class MapTileVisual : MonoBehaviour {
 	public void SetBuilding(Building build) {
 		if (build == null) {
 			tileSprite.enabled = true;
-			building.enabled = false;
-			buildingCollider.enabled = false;
+			if(building != null) {
+				Destroy(building);
+			}
 		}
 		else {
 			tileSprite.enabled = false;
-			building.sprite = build.sprite;
-			building.enabled = true;
-			buildingCollider.enabled = true;
+			if(building != null) {
+				Destroy(building);
+			}
+			building = Instantiate(build.prefab, transform.position, Quaternion.identity);
+			building.transform.SetParent(transform);
 		}
 	}
 }

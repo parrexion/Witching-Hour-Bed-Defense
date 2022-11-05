@@ -17,5 +17,5 @@ MonoBehaviour:
   woodCost: 5
   fluffCost: 0
   candyCost: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 1183469224387244963, guid: e0f5547cfb0cc4c4b875ccdd51cb0a3f, type: 3}
   sprite: {fileID: 21300000, guid: 4229d4015db41417babad8cc9c1bbea3, type: 3}
