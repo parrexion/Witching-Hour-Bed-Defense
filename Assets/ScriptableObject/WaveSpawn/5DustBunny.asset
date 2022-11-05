@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d19c4d30f3e2fd7419d71169b8921db7, type: 3}
-  m_Name: 1Monster
+  m_Name: 5DustBunny
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6725856788929023056, guid: 44873157d57c07c4eaf4bc5e8043eeaf, type: 3}
-  amount: 1
+  enemy: {fileID: 2339034734653060231, guid: 48a53868741dfff4a8cec55c80613455, type: 3}
+  amount: 5
