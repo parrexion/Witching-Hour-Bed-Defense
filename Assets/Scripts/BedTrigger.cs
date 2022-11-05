@@ -7,7 +7,7 @@ public class BedTrigger : MonoBehaviour {
         if(other.CompareTag("Enemy")) {
             Enemy enemy = other.GetComponent<Enemy>();
             Inventory.instance.removeHealth(enemy.GetDamage());
-            Destroy(other.gameObject);
+            enemy.ReachedGoal();
         }
     }
 

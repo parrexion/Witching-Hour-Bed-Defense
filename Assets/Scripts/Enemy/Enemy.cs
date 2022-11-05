@@ -25,10 +25,6 @@ public class Enemy : MonoBehaviour {
 		enemyHealth.onDeath += Die;
 	}
 
-	private void OnDestroy() {
-		onDestroyed(this);
-	}
-
 	public void SetCamera(Camera cam) {
 		healthCanvas.worldCamera = cam;
 	}
@@ -63,6 +59,12 @@ public class Enemy : MonoBehaviour {
 			ItemPickUp pickup = Instantiate(dropCandyPrefab, transform.position, Quaternion.identity);
 			pickup.setAmount(enemyData.dropCandy);
 		}
+		onDestroyed(this); 
+		Destroy(gameObject);
+	}
+
+	public void ReachedGoal() {
+		onDestroyed(this);
 		Destroy(gameObject);
 	}
 }
