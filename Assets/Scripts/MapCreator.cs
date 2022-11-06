@@ -12,6 +12,7 @@ public class MapCreator : MonoBehaviour {
 	}
 
 	public Vector2Int MaxSize = new Vector2Int(10, 10);
+	public Vector2 tileSize = new Vector2(1.25f, 1.25f);
 
 	[Header("Prefabs")]
 	public AstarPath astar;
@@ -39,14 +40,14 @@ public class MapCreator : MonoBehaviour {
 				}
 			}
 		}
-		bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f, (MaxSize.y - 1) * 0.5f, 0f), Quaternion.identity);
-		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition(), Quaternion.identity);
-		cam.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f, new Rect(0f, 0f, MaxSize.x, MaxSize.y));
+		bed = Instantiate(bedPrefab, new Vector3((MaxSize.x - 1) * 0.5f * tileSize.x, (MaxSize.y - 1) * 0.5f * tileSize.y, 0f), Quaternion.identity);
+		player = Instantiate(playerPrefab, GetTile((MaxSize.x - 1) / 2, (MaxSize.y - 3) / 2).GetPhysicalPosition() * tileSize.x, Quaternion.identity);
+		cam.Setup(player.transform, bed.transform, (Mathf.Max(MaxSize.x * 0.57f, MaxSize.y) + 1) * 0.5f * tileSize.x, new Rect(0f, 0f, MaxSize.x * tileSize.x, MaxSize.y * tileSize.y));
 
 		//Create bed area
 		bed.Setup(Camera.main);
-		for (int y = MaxSize.y / 2 - 1, target = MaxSize.y / 2 + 2; y < target; y++) {
-			for (int x = MaxSize.x / 2 - 2, target2 = MaxSize.x / 2 + 2; x < target2; x++) {
+		for (int y = MaxSize.y / 2 - 1, target = MaxSize.y / 2 + 1; y < target; y++) {
+			for (int x = MaxSize.x / 2 - 1, target2 = MaxSize.x / 2 + 1; x < target2; x++) {
 				MapTile tile = GetTile(x, y);
 				tile.SetBed(bedBuilding);
 			}
@@ -75,7 +76,7 @@ public class MapCreator : MonoBehaviour {
 				if (x > 0)
 					map[pos].AddNeighbour(Direction.WEST, map[pos - 1]);
 				mapVisuals[pos] = Instantiate(tilePrefab, transform);
-				mapVisuals[pos].transform.position = new Vector3(x, y, 0);
+				mapVisuals[pos].transform.position = new Vector3(x * tileSize.x, y * tileSize.y, 0);
 				mapVisuals[pos].SetBuilding(null);
 				map[pos].onBuildingChanged += mapVisuals[pos].SetBuilding;
 				pos++;
@@ -105,7 +106,7 @@ public class MapCreator : MonoBehaviour {
 	}
 
 	public MapTile ApproximateTile(Vector3 position) {
-		Vector2Int approx = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y - 0.25f));
+		Vector2Int approx = new Vector2Int(Mathf.RoundToInt(position.x / tileSize.x), Mathf.RoundToInt((position.y - 0.25f) / tileSize.y));
 		if (approx.x < 0 || approx.x >= MaxSize.x)
 			return null;
 		if (approx.y < 0 || approx.y >= MaxSize.y)

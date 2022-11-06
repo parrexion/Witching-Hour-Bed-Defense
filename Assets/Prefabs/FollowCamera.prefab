@@ -133,7 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 8938737008851540682}
   offset: {x: 0, y: 0, z: -5}
-  followCamSize: 5
+  clampOffset: {x: 4, y: 2}
+  followCamSize: 9
+  bedCamSizeOffset: 4
   maxMoveSpeed: 8
   zoomInSpeed: 1
   zoomOutSpeed: 1

@@ -10,7 +10,7 @@ public class AudioLibrary : ScriptableObject {
 
 
 	public AudioClip GetMusic(Music music) {
-		return sfxClips[(int)music];
+		return musicClips[(int)music];
 	}
 
 	public AudioClip GetSfx(SFX sfx) {

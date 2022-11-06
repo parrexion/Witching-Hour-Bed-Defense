@@ -281,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181471828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 2.25, z: 0}
+  m_LocalPosition: {x: -4, y: 3, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -476,8 +476,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059255327801281801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.35, y: 3.23, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 15.92, y: 2.84, z: 0}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7947507156966545085}
@@ -4309,22 +4309,6 @@ PrefabInstance:
     - target: {fileID: 8938737008851540682, guid: b86f38b51e3c90c429492dc7db8c6416, type: 3}
       propertyPath: orthographic size
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8938737008851540687, guid: b86f38b51e3c90c429492dc7db8c6416, type: 3}
-      propertyPath: clampOffset.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8938737008851540687, guid: b86f38b51e3c90c429492dc7db8c6416, type: 3}
-      propertyPath: clampOffset.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8938737008851540687, guid: b86f38b51e3c90c429492dc7db8c6416, type: 3}
-      propertyPath: followCamSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8938737008851540687, guid: b86f38b51e3c90c429492dc7db8c6416, type: 3}
-      propertyPath: bedCamSizeOffset
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b86f38b51e3c90c429492dc7db8c6416, type: 3}

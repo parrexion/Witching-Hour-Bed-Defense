@@ -26,8 +26,11 @@ public class AudioController : MonoBehaviour {
 	[Header("Settings")]
 	public float fadeSpeed = 1f;
 
+	private float musicVolume = 1f;
+
 
 	public void SetMusicVolume(float volume) {
+		musicVolume = volume;
 		for (int i = 0; i < musicSources.Length; i++) {
 			musicSources[i].volume = volume;
 		}
@@ -37,17 +40,23 @@ public class AudioController : MonoBehaviour {
 		sfxSource.volume = volume;
 	}
 
-	public void PlayMusic(Music music) {
+	public void PlayMusic(Music music, bool withFade = false) {
+		musicSources[0].volume = musicVolume;
 		musicSources[0].clip = library.GetMusic(music);
 		musicSources[0].Play();
+		if (withFade) {
+			musicSources[0].volume = 0f;
+			musicSources[0].DOFade(musicVolume, fadeSpeed)
+				.OnComplete(() => musicSources[0].volume = musicVolume);
+		}
 	}
 
 	public void PlayMusicWithFadeout(Music music) {
 		AudioClip musicClip = library.GetMusic(music);
 		Sequence seq = DOTween.Sequence();
 		seq.Append(musicSources[0].DOFade(0f, fadeSpeed));
-		seq.AppendCallback(() => { musicSources[0].clip = musicClip; });
-		seq.Append(musicSources[0].DOFade(1f, fadeSpeed));
+		seq.AppendCallback(() => { musicSources[0].clip = musicClip; musicSources[0].Play(); });
+		seq.Append(musicSources[0].DOFade(musicVolume, fadeSpeed));
 	}
 
 	public void PlayMusicWithTransition(Music music, Music transition) {
@@ -61,6 +70,7 @@ public class AudioController : MonoBehaviour {
 			musicSources[0].clip = musicClip;
 			musicSources[0].Play();
 		});
+		seq.Append(musicSources[0].DOFade(musicVolume, fadeSpeed));
 	}
 
 	public void PlaySfx(SFX sfx) {

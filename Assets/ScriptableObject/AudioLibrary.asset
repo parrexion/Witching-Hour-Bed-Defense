@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b4c436fb907714d93dd527c25f1879, type: 3}
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
-  musicClips: []
+  musicClips:
+  - {fileID: 8300000, guid: db54abb56bd278d4994db31eeab19758, type: 3}
+  - {fileID: 8300000, guid: db54abb56bd278d4994db31eeab19758, type: 3}
+  - {fileID: 8300000, guid: db54abb56bd278d4994db31eeab19758, type: 3}
   sfxClips: []
