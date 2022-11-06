@@ -11,11 +11,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d639afea7e1ec5544963906106e51611, type: 3}
   m_Name: 00_DustBunny
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  damage: 20
+  m_EditorClassIdentifier:
+  maxHealth: 8
+  damage: 10
   attackDelay: 0.5
-  moveSpeed: 3
-  dropWood: 6
-  dropFluff: 5
-  dropCandy: 3
+  moveSpeed: 2
+  dropWood: 0
+  dropFluff: 10
+  dropCandy: 2
