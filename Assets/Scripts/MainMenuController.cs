@@ -15,6 +15,9 @@ public class MainMenuController : MonoBehaviour {
 	public GameObject niceMenu;
 	public GameObject evilMenu;
 
+	public GameObject exitButton;
+	public GameObject exitButton2;
+
 	private bool starting;
 
 
@@ -26,6 +29,11 @@ public class MainMenuController : MonoBehaviour {
 		musicSlider.value = 10;
 		StartCoroutine(DelayedMusic());
 		fadeOutImage.gameObject.SetActive(false);
+
+#if !UNITY_STANDALONE
+		exitButton.SetActive(false);
+		exitButton2.SetActive(false);
+#endif
 	}
 
 	IEnumerator DelayedMusic() {
@@ -48,5 +56,14 @@ public class MainMenuController : MonoBehaviour {
 		AudioController.instance.SetMusicVolume(volume * 0.1f);
 		AudioController.instance.SetSfxVolume(volume * 0.1f);
 		volumeText.text = volume.ToString();
+	}
+
+	public void ExitGame() {
+#if UNITY_STANDALONE
+		Application.Quit();
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#endif
+#endif
 	}
 }

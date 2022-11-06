@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuildUI : MonoBehaviour {
 
@@ -79,5 +80,9 @@ public class BuildUI : MonoBehaviour {
 				buildingTemplater.GetEntry<BuildingEntry>(i).SetAffordable(true);
 			}
 		}
+	}
+
+	public void ExitButton() {
+		SceneManager.LoadScene("MainMenuScene");
 	}
 }
