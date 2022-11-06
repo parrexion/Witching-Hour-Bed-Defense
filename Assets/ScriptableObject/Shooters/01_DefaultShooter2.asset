@@ -17,7 +17,7 @@ MonoBehaviour:
   label: Jam shooter 2
   desc: Pew pew 2
   sprite: {fileID: 21300000, guid: 848a2900fa9a37f43879f0dadb24350d, type: 3}
-  unlockLevel: 0
+  unlockLevel: 2
   removeLevel: 99
   woodCost: 8
   fluffCost: 0
