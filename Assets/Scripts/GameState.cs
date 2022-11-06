@@ -113,7 +113,7 @@ public class GameState : MonoBehaviour {
 
 		if (!gameOver) {
 			if (CurrentLevel == 6) {
-				onGameOver?.Invoke(true);
+				Victory();
 			}
 			else {
 				onUpgradeBed?.Invoke(nextLevel.awardsLevel);
@@ -127,6 +127,20 @@ public class GameState : MonoBehaviour {
 			AudioController.instance.PlayMusicTransitionToDay();
 			onGameOver?.Invoke(false);
 		}
+	}
+
+	public void Victory() {
+		gameOver = true;
+		AudioController.instance.StopMusic();
+		AudioController.instance.PlaySfx(SFX.TRANSITION);
+
+		playerMove.enabled = false;
+		playerBuild.enabled = false;
+		cameraController.enabled = false;
+
+		cameraController.Shake();
+
+		//onGameOver?.Invoke(true);
 	}
 
 	private void WaveFinished() {
