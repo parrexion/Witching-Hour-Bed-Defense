@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Spider2
   m_EditorClassIdentifier: 
   maxHealth: 25
-  damage: 5
+  damage: 30
   attackDelay: 0.5
   moveSpeed: 2
   dropWood: 16

@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 643256184692440848}
   - component: {fileID: 643256184692440849}
   - component: {fileID: 6390252106947583181}
+  - component: {fileID: 503746680}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -613,9 +614,19 @@ MonoBehaviour:
   healthAmountLabel: {fileID: 1321400201279780551}
   gameOverBlocker: {fileID: 7846078686148177386}
   gameOverArea: {fileID: 4682908606068311301}
+  gameOverObj: {fileID: 4682908606068311301}
+  winObj: {fileID: 8729559709803400877}
   gameOverAnimator: {fileID: 7774539659128840652}
   gameOverButtons: {fileID: 859803968477971112}
   victoryText: {fileID: 3279086482669632511}
+--- !u!222 &503746680
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643256184692440850}
+  m_CullTransparentMesh: 1
 --- !u!1 &770127774520342260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,8 +1690,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Return to main
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef21e4060a6e0b84fbf5f8d897c998cb, type: 2}
+  m_sharedMaterial: {fileID: -1071638085678583408, guid: ef21e4060a6e0b84fbf5f8d897c998cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
