@@ -194,6 +194,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: startWood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: startCandy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: startFluff
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6522330334953469328, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
       value: 3
@@ -1764,6 +1776,10 @@ PrefabInstance:
       propertyPath: currentWave
       value: 
       objectReference: {fileID: 11400000, guid: 1ed91db981c6fb64da329d61d5b9cc70, type: 2}
+    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 21e19ad3a8ae9d14d977e0e97898821f, type: 2}
     - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4

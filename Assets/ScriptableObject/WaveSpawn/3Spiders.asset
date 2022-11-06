@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d639afea7e1ec5544963906106e51611, type: 3}
-  m_Name: 02_Spider
+  m_Script: {fileID: 11500000, guid: d19c4d30f3e2fd7419d71169b8921db7, type: 3}
+  m_Name: 3Spiders
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  damage: 25
-  attackDelay: 0.5
-  moveSpeed: 2
-  dropWood: 10
-  dropFluff: 4
-  dropCandy: 5
+  enemy: {fileID: 7811013829096813527, guid: 8b5b74eb50253ad498bf251f8981f56f, type: 3}
+  amount: 1
