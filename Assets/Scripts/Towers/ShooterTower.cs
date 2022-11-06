@@ -7,16 +7,18 @@ public class ShooterTower : MonoBehaviour {
     public Shooter shooter;
     public Animator anim;
 
+    private Transform target;
+
     private void Start() {
         StartCoroutine(fire());  
     }
 
     IEnumerator fire() {
         yield return new WaitForSeconds(shooter.firingDelay);
-        Transform enemy = getEnemy();
-        if(enemy == null) {anim.SetBool("Firing", false); StartCoroutine(fire()); yield break;}
+        if(target == null) {target = getRandomEnemy();}
+        if(target == null) {anim.SetBool("Firing", false); StartCoroutine(fire()); yield break;}
         anim.SetBool("Firing", true);
-        Vector2 angle = enemy.position - transform.position;
+        Vector2 angle = target.position - transform.position;
         angle = Vector3.Normalize(angle);
         GameObject tempBullet = Instantiate(projectile, transform.position, Quaternion.identity);
         tempBullet.GetComponent<Rigidbody2D>().velocity = angle*shooter.bulletSpeed;

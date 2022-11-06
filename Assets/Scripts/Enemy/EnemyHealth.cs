@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour {
 
 
 	public void SetData(EnemyObj data) {
-		health = maxHealth = data.maxHealth*Difficulty.diffMult;
+		health = maxHealth = data.maxHealth/Difficulty.diffMult;
 		slider.SetValueWithoutNotify(1f);
 		initialColor = sprt.color;
 	}
