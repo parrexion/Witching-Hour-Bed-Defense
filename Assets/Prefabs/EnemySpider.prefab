@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.1933334
       objectReference: {fileID: 0}
+    - target: {fileID: 5771497492509031565, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: sprt
+      value: 
+      objectReference: {fileID: 2995297916973911780}
     - target: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
       propertyPath: aiBase
       value: 
@@ -93,6 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 6cc8e7d663097b8498c77d5ca6ec491c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+--- !u!212 &2995297916973911780 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3698367137430646999, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+  m_PrefabInstance: {fileID: 1928194596030561843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2995297916973911783 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3698367137430646996, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
