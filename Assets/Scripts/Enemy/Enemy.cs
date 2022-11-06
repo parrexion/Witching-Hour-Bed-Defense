@@ -51,15 +51,15 @@ public class Enemy : MonoBehaviour {
 	public void Die() {
 		if (enemyData.dropWood > 0) {
 			ItemPickUp pickup = Instantiate(dropWoodPrefab, transform.position, Quaternion.identity);
-			pickup.setAmount(enemyData.dropWood);
+			pickup.setAmount((int)Mathf.Round(enemyData.dropWood * Difficulty.diffMult));
 		}
 		if (enemyData.dropFluff > 0) {
 			ItemPickUp pickup = Instantiate(dropFluffPrefab, transform.position, Quaternion.identity);
-			pickup.setAmount(enemyData.dropFluff);
+			pickup.setAmount((int)Mathf.Round(enemyData.dropFluff * Difficulty.diffMult));
 		}
 		if (enemyData.dropCandy > 0) {
 			ItemPickUp pickup = Instantiate(dropCandyPrefab, transform.position, Quaternion.identity);
-			pickup.setAmount(enemyData.dropCandy);
+			pickup.setAmount((int)Mathf.Round(enemyData.dropCandy * Difficulty.diffMult));
 		}
 		onDestroyed(this); 
 		Destroy(gameObject);
