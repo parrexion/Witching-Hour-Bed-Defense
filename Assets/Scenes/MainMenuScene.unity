@@ -373,6 +373,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 436644211098301248, guid: 7ec6e4182d327ad459bf8f70ecef57bf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436644211098301248, guid: 7ec6e4182d327ad459bf8f70ecef57bf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436644211098301248, guid: 7ec6e4182d327ad459bf8f70ecef57bf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079873141420627374, guid: 7ec6e4182d327ad459bf8f70ecef57bf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079873141420627374, guid: 7ec6e4182d327ad459bf8f70ecef57bf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8518760528083635450, guid: 7ec6e4182d327ad459bf8f70ecef57bf, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
