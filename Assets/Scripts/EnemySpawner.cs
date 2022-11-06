@@ -48,7 +48,8 @@ public class EnemySpawner : MonoBehaviour {
 
 	IEnumerator Spawn() {
 		if (currentWaveLevel >= waves.Length)
-			currentWaveLevel = waves.Length;
+			currentWaveLevel = waves.Length - 1;
+		Debug.Log("Night " + currentWaveLevel);
 		totalEnemies = 0;
 		totalEnemiesSpawned = 0;
 		for (int i = 0; i < waves[currentWaveLevel].spawns.Count; i++) {
