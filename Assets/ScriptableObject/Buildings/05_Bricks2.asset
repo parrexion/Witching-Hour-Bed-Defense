@@ -18,7 +18,7 @@ MonoBehaviour:
   desc: Deals dmg when stepped on (lasts 1 round)
   sprite: {fileID: 21300000, guid: 5ce40067ddc15054e83df1d3d5de2e95, type: 3}
   unlockLevel: 2
-  removeLevel: 99
+  removeLevel: 5
   woodCost: 2
   fluffCost: 0
   candyCost: 1
