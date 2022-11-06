@@ -56,6 +56,10 @@ public class Inventory : MonoBehaviour {
 		return health;
     }
 
+	public void heal() {
+		health = maxHealth;
+	}
+
 	public bool isDead() {
 		return health == 0;
 	}

@@ -49,6 +49,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	private void SetDay(bool firstStart = false) {
+		Inventory.instance.heal();
 		buildBarAnim.SetTrigger("Toggle");
 		isDay = true;
 		CurrentDay++;
