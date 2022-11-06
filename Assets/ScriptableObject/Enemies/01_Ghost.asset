@@ -16,6 +16,6 @@ MonoBehaviour:
   damage: 5
   attackDelay: 0.5
   moveSpeed: 5
-  dropWood: 12
+  dropWood: 8
   dropFluff: 6
   dropCandy: 5

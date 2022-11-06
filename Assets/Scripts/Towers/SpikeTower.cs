@@ -8,7 +8,7 @@ public class SpikeTower : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Enemy") {
-            other.GetComponent<EnemyHealth>().DamageEnemy(damage);
+            other.GetComponent<Enemy>().enemyHealth.DamageEnemy(damage);
         }
     }
 
