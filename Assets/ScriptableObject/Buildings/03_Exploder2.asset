@@ -22,5 +22,5 @@ MonoBehaviour:
   woodCost: 0
   fluffCost: 5
   candyCost: 5
-  damage: 15
+  damage: 100
   reach: 4

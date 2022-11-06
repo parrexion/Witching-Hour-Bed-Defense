@@ -24,6 +24,9 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	public void DamageEnemy(float damage) {
+		if (health < 0)
+			return;
+
 		health -= damage;
 		slider.value = (health / maxHealth);
 		fill.color = gradient.Evaluate(health / maxHealth);
@@ -31,7 +34,7 @@ public class EnemyHealth : MonoBehaviour {
 			onDeath?.Invoke();
 		}
 		sprt.color = new Color(1, 0.5f, 0.5f, 1f);
-		Invoke("noRed", 0.05f);
+		Invoke(nameof(noRed), 0.05f);
 	}
 	private void noRed() {
 		sprt.color = initialColor;

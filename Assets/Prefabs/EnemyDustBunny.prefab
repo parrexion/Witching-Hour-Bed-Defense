@@ -63,21 +63,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5771497492509031565, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-      propertyPath: sprt
-      value: 
-      objectReference: {fileID: 7314636989415000500}
     - target: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
       propertyPath: aiBase
       value: 
       objectReference: {fileID: 7314636989415000503}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
---- !u!212 &7314636989415000500 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3698367137430646999, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-  m_PrefabInstance: {fileID: 6256048295056750947}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7314636989415000503 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3698367137430646996, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}

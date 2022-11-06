@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885f8930068f95544b6211e40fb48b0c, type: 3}
+  m_Name: Wave3
+  m_EditorClassIdentifier: 
+  spawns:
+  - enemy: {fileID: 11400000, guid: b958067dfb01ef5419db51e9f742373f, type: 2}
+    amount: 8
+    delay: 0.5
+  - enemy: {fileID: 11400000, guid: 7db4f14242a69c047a4a05a161eb0c55, type: 2}
+    amount: 5
+    delay: 1
+  wood: 0
+  fluff: 0
+  candy: 0

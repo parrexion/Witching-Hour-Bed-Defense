@@ -17,9 +17,9 @@ public class EnemySpawner : MonoBehaviour {
 
 	public AstarPath astar;
 	public Vector3 spawnPoint;
-	public Enemy enemyPrefab;
-	public Wave[] waves;
-	public List<Transform> spawnPoints = new List<Transform>();
+	public EnemyObj defaultEnemy;
+	public WaveLibrary waveLib;
+	public List<Transform> spawnPoints;
 	public float finishDelay = 2f;
 
 	public int totalEnemies;
@@ -27,8 +27,8 @@ public class EnemySpawner : MonoBehaviour {
 	private List<Enemy> enemies = new List<Enemy>();
 	private Camera mainCam;
 
-	private int currentWaveLevel;
-	private int currentWaveStage = 0;
+	public int level;
+	public int stage = 0;
 
 
 
@@ -47,41 +47,41 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	IEnumerator Spawn() {
-		if (currentWaveLevel >= waves.Length)
-			currentWaveLevel = waves.Length - 1;
-		Debug.Log("Night " + currentWaveLevel);
+		if (level >= waveLib.waves.Length)
+			level = waveLib.waves.Length - 1;
+		Debug.Log("Night " + level);
 		totalEnemies = 0;
 		totalEnemiesSpawned = 0;
-		for (int i = 0; i < waves[currentWaveLevel].spawns.Count; i++) {
-			totalEnemies += waves[currentWaveLevel].spawns[i].amount;
+		for (int i = 0; i < waveLib.waves[level].spawns.Length; i++) {
+			totalEnemies += waveLib.waves[level].spawns[i].amount;
 		}
 		yield return new WaitForSeconds(3f);
 
-		currentWaveStage = 0;
-		while (currentWaveStage < waves[currentWaveLevel].spawns.Count) {
-			WaveSpawn currentSpawn = waves[currentWaveLevel].spawns[currentWaveStage];
+		stage = 0;
+		while (stage < waveLib.waves[level].spawns.Length) {
+			WaveData.Spawns currentSpawn = waveLib.waves[level].spawns[stage];
 			for (int i = 0; i < currentSpawn.amount; i++) {
 				int index = Random.Range(0, spawnPoints.Count);
 				Vector3 spawnPos = spawnPoints[index].position;
 				SpawnEnemy(currentSpawn.enemy, spawnPos);
+				yield return new WaitForSeconds(currentSpawn.delay);
 			}
-			currentWaveStage++;
-			yield return new WaitForSeconds(waves[currentWaveLevel].delay);
+			stage++;
 		}
 	}
 
 	IEnumerator DelayedWaveFinished() {
 		yield return new WaitForSeconds(finishDelay);
-		Inventory.instance.addWood(waves[currentWaveLevel].wood);
-		Inventory.instance.addFluff(waves[currentWaveLevel].fluff);
-		Inventory.instance.addCandy(waves[currentWaveLevel].candy);
-		currentWaveLevel++;
+		Inventory.instance.addWood(waveLib.waves[level].wood);
+		Inventory.instance.addFluff(waveLib.waves[level].fluff);
+		Inventory.instance.addCandy(waveLib.waves[level].candy);
+		level++;
 		onWaveFinished?.Invoke();
 	}
 
-	public void SpawnEnemy(Enemy prefab, Vector3 pos) {
+	public void SpawnEnemy(EnemyObj enemyData, Vector3 pos) {
 		totalEnemiesSpawned++;
-		Enemy e = Instantiate(prefab, pos, Quaternion.identity, transform);
+		Enemy e = Instantiate(enemyData.enemy, pos, Quaternion.identity, transform);
 		e.SetCamera(mainCam);
 		e.SetTarget(MapCreator.instance.GetBed().transform);
 		e.onDestroyed += CleanUpEnemy;
@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	public void SpawnEnemy() {
-		SpawnEnemy(enemyPrefab, spawnPoint);
+		SpawnEnemy(defaultEnemy, spawnPoint);
 	}
 
 	public void RefreshPathfinding() {

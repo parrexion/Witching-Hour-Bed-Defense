@@ -47,11 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astar: {fileID: 2474496907353790631}
   spawnPoint: {x: 0, y: 0, z: 0}
-  enemyPrefab: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-  waves:
-  - {fileID: 11400000, guid: 1ed91db981c6fb64da329d61d5b9cc70, type: 2}
-  - {fileID: 11400000, guid: 296e0e7181864474d93d5046503dd2b3, type: 2}
-  - {fileID: 11400000, guid: 7e5e0cfdf7f101746871104f87adf09e, type: 2}
+  defaultEnemy: {fileID: 11400000, guid: b958067dfb01ef5419db51e9f742373f, type: 2}
+  waveLib: {fileID: 11400000, guid: 8eda7418c19d52e46a3e8198e91a581f, type: 2}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -60,6 +57,8 @@ MonoBehaviour:
   finishDelay: 2
   totalEnemies: 0
   totalEnemiesSpawned: 0
+  level: 0
+  stage: 0
 --- !u!1001 &1663400176660043566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,10 +109,6 @@ PrefabInstance:
     - target: {fileID: 3837832651054829448, guid: 8d707ecf927cb4344866e814c76dbf0e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3837832651054829449, guid: 8d707ecf927cb4344866e814c76dbf0e, type: 3}
-      propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAIIeysI1kmbQIAACQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMuS2jAQ/BVK57Bl83ZuCbBsDrtQS1J78UVYY6xCllySzGO3+PeM5GfICdHTM9PTGvmLcGkKSKzSG83Zq2JAvg+IO5Nvgy74Ald6VHLPP6HhfHBmM0einvNOLVeIhy7NqBys5skPeRSOHCBYSp4qna/ZEZbKWINwSoUBDGllXbZE6GtArvgzjFzKDU+juTt94ikKBnc8JiAt6I4aPU1r6rwmVrxSJoLmBTAnuqOPmsLh1NMkjlMzAl8pUUJwU6sh9lb4afdFBhrcuIxTHM4rCJ4iBDLgx8y60v3sbZoasPXsmt5WXKNLVVnyU1XW5dScKmlnKkrXaDbxqqqar/+Fh6EPp1rlL03bMHAtbMaT0zu9JdTYnrV9eNUpD71BFypO9CDgIwP5pjZalZJh0OrSpZYGRqvubzvZMoPk1OGV1AewLDrHW8Of5otFOI5m4/UwaO7KDXT3TlyXgucH7+qkAvZCefP9LoDGi/qF6v2mmLouok7SHwO/6bG/UnXgmWtjMVSPLJ3Wgyq1o5K1N9CNVtql0hI8XE9QgKTC3nZYxj5e50Os1/Yh8kzd46mb17HmTTykeLjjB8FDaKcu7c2ZTF1ewWTb0gouoRPtAm/o01JJWW1b35MmbV/qlCZ9DceSs38XjcxHhzRKFuPRgqaTdAzDScRm88nsMA1hfEgXAfGbyCUOSsWuUlr7g9cmO1ESt675qAw2mhZ+9Zmmlw3/zFXPcy5TtU80gNxWFVrloLEJvlK2Zhwd2oO1XPoLJ18xESo5AYvbQrEfdX21msZdlZgU/KysQ2Ky9F+RmDi43eydhjOHi2veFLuT+19QSwMEFAAACAgAAAgh7B4/tnRtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJK5UVKaZbKFsZFFYppJmnGqrollipm5iVmSqWGqcVKahYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7KwjWSZtAgAAJAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7B4/tnRtAAAAeAAAAAkAJAAAAAAAAAAAAAAAugIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAByAwAAAAA=
       objectReference: {fileID: 0}
     - target: {fileID: 3837832651054829495, guid: 8d707ecf927cb4344866e814c76dbf0e, type: 3}
       propertyPath: m_Name

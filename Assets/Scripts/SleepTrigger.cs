@@ -16,7 +16,6 @@ public class SleepTrigger : MonoBehaviour {
 			canvas.enabled = true;
 			PlayerMovement player = collision.GetComponent<PlayerMovement>();
 			player.SetCanSleep(true);
-			Debug.Log("Now inside");
 		}
 	}
 
@@ -25,7 +24,6 @@ public class SleepTrigger : MonoBehaviour {
 			canvas.enabled = false;
 			PlayerMovement player = collision.GetComponent<PlayerMovement>();
 			player.SetCanSleep(false);
-			Debug.Log("Now outside");
 		}
 	}
 

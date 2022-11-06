@@ -91,10 +91,22 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.1933334
       objectReference: {fileID: 0}
-    - target: {fileID: 5771497492509031565, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-      propertyPath: sprt
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2995297916973911780}
+      objectReference: {fileID: 21300000, guid: b6932ebb5b25fa94996ae9fda81e6921, type: 3}
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9172354
+      objectReference: {fileID: 0}
     - target: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
       propertyPath: aiBase
       value: 
@@ -102,18 +114,17 @@ PrefabInstance:
     - target: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
       propertyPath: enemyData
       value: 
-      objectReference: {fileID: 11400000, guid: 7db4f14242a69c047a4a05a161eb0c55, type: 2}
+      objectReference: {fileID: 11400000, guid: 0769756f24a84417f96d21add9722995, type: 2}
     - target: {fileID: 8755363789301289990, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6cc8e7d663097b8498c77d5ca6ec491c, type: 2}
+    - target: {fileID: 8765850378541096782, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
---- !u!212 &2995297916973911780 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3698367137430646999, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-  m_PrefabInstance: {fileID: 1928194596030561843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2995297916973911783 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3698367137430646996, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}

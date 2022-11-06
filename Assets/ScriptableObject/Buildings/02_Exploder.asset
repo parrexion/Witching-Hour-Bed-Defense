@@ -17,10 +17,10 @@ MonoBehaviour:
   label: Explode bunny
   desc: Explodes when an enemy is nearby
   sprite: {fileID: 21300000, guid: 3c9f72966167f0744a1581881afa4a5a, type: 3}
-  unlockLevel: 0
+  unlockLevel: 2
   removeLevel: 3
-  woodCost: 2
-  fluffCost: 15
+  woodCost: 0
+  fluffCost: 5
   candyCost: 2
-  damage: 10
+  damage: 25
   reach: 3

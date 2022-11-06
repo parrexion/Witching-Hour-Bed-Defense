@@ -4,10 +4,12 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName="ScriptableObjects/Shooter")]
 public class Shooter : Building {
+    public enum Targetting{Random, CloseToTower, CloseToBed, Weak, Strong};
+
+    [Header("Stats")]
     public float damagePerBullet;
     public float bulletSpeed;
     public float firingDelay;
-    public enum Targetting{Random, CloseToTower, CloseToBed, Weak, Strong};
     public Targetting targetting;
 
 }

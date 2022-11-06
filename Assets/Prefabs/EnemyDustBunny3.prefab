@@ -75,21 +75,36 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5771497492509031565, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-      propertyPath: sprt
-      value: 
-      objectReference: {fileID: 7314636989415000500}
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570410787142995891, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6894455
+      objectReference: {fileID: 0}
     - target: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
       propertyPath: aiBase
       value: 
       objectReference: {fileID: 7314636989415000503}
+    - target: {fileID: 8548985985252199908, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6cd0026b9e14841238b6f7e361e76625, type: 2}
+    - target: {fileID: 8765850378541096782, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765850378541096782, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
---- !u!212 &7314636989415000500 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3698367137430646999, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}
-  m_PrefabInstance: {fileID: 6256048295056750947}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7314636989415000503 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3698367137430646996, guid: c30be54fe5ec82a4aa2b2827939cd495, type: 3}

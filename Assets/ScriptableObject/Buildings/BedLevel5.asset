@@ -19,8 +19,9 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: d396b97841d556448bf7f14be1551684, type: 3}
   unlockLevel: 4
   removeLevel: 5
-  woodCost: 100
-  fluffCost: 75
+  woodCost: 50
+  fluffCost: 100
   candyCost: 50
   awardsLevel: 5
   bedPlayerSprite: {fileID: 21300000, guid: 17b3fb55f767d82459292c484d797d09, type: 3}
+  maxHealth: 300

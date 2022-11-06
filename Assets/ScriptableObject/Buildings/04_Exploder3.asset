@@ -20,7 +20,7 @@ MonoBehaviour:
   unlockLevel: 5
   removeLevel: 99
   woodCost: 0
-  fluffCost: 5
+  fluffCost: 8
   candyCost: 5
-  damage: 25
+  damage: 250
   reach: 6

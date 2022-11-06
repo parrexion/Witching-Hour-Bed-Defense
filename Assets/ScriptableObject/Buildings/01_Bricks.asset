@@ -17,8 +17,8 @@ MonoBehaviour:
   label: Bricks
   desc: Deals dmg when stepped on (lasts 1 round)
   sprite: {fileID: 21300000, guid: ed1eeae9d21d2324f87e052ac94aaf56, type: 3}
-  unlockLevel: 0
-  removeLevel: 2
-  woodCost: 5
+  unlockLevel: 3
+  removeLevel: 4
+  woodCost: 2
   fluffCost: 0
   candyCost: 0

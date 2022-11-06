@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour {
     private int wood = 0;
     private int fluff = 0;
     private int candy = 0;
+	private bool dead;
 
 
     private void Setup() {
@@ -43,8 +44,12 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void removeHealth(float damage) {
+		if (dead)
+			return;
+
 		health = Math.Max(health - damage, 0);
 		if(health == 0) {
+			dead = true;
 			GameState.instance.ShowGameOver();
 		}
 		onInventoryUpdated?.Invoke();
@@ -61,6 +66,7 @@ public class Inventory : MonoBehaviour {
 
 	public void heal() {
 		health = maxHealth;
+		onInventoryUpdated?.Invoke();
 	}
 
 	public bool isDead() {

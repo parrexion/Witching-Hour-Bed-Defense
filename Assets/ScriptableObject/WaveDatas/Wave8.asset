@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885f8930068f95544b6211e40fb48b0c, type: 3}
+  m_Name: Wave8
+  m_EditorClassIdentifier: 
+  spawns:
+  - enemy: {fileID: 11400000, guid: 7bd8654bd1c1e4c1ca8c17642fd92483, type: 2}
+    amount: 10
+    delay: 0.5
+  - enemy: {fileID: 11400000, guid: 8f434486a6b6042859519cb05a3d3d90, type: 2}
+    amount: 10
+    delay: 1
+  wood: 0
+  fluff: 0
+  candy: 0

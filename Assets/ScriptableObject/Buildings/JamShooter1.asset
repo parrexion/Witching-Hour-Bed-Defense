@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32f4c6d1cd4b2d4496560be4c8ccfd9, type: 3}
+  m_Name: JamShooter1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6955069522116232223, guid: 333d8a3c403db64439c97fc120ecbe19, type: 3}
+  blocking: 1
+  label: Jam shooter
+  desc: A nice general shooter
+  sprite: {fileID: 21300000, guid: 32c55ca74637e3f42b69e9fa5e680cba, type: 3}
+  unlockLevel: 0
+  removeLevel: 3
+  woodCost: 0
+  fluffCost: 0
+  candyCost: 5
+  damagePerBullet: 3
+  bulletSpeed: 35
+  firingDelay: 0.5
+  targetting: 0

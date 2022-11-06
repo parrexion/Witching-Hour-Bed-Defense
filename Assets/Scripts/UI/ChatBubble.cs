@@ -5,7 +5,7 @@ using TMPro;
 
 public class ChatBubble : MonoBehaviour {
     public static ChatBubble instance;
-    private void Start() {
+    private void Awake() {
         instance = this;
     }
 

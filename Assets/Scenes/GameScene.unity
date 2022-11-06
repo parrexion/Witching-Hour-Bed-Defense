@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: startWood
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: startCandy
@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1897089282693882431, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: startFluff
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6522330334953469328, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
@@ -1796,10 +1796,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1ed91db981c6fb64da329d61d5b9cc70, type: 2}
     - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
-      propertyPath: waves.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 21e19ad3a8ae9d14d977e0e97898821f, type: 2}
-    - target: {fileID: 1663400176697473472, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1874,10 +1870,6 @@ PrefabInstance:
     - target: {fileID: 1663400176697473475, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2474496907353790631, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}
-      propertyPath: tagNames.Array.size
-      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1de9350a5f3024d927dff2896675b0, type: 3}

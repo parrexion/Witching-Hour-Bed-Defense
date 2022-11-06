@@ -19,6 +19,6 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 69f0556d2d069564ead3810edb77c86a, type: 3}
   unlockLevel: 5
   removeLevel: 99
-  woodCost: 15
+  woodCost: 5
   fluffCost: 0
-  candyCost: 0
+  candyCost: 3

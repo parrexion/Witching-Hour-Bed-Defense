@@ -58,7 +58,6 @@ public class GameState : MonoBehaviour {
 	private void SetDay(bool firstStart = false) {
 		ChatBubble.instance.displayMessage(dayMessages[Random.Range(0, dayMessages.Count)]);
 		Inventory.instance.heal();
-		buildBarAnim.SetTrigger("Toggle");
 		isDay = true;
 		CurrentDay++;
 		nightlight.enabled = false;
@@ -73,6 +72,7 @@ public class GameState : MonoBehaviour {
 		onDayChanged?.Invoke(isDay);
 
 		if (!firstStart) {
+			buildBarAnim.SetTrigger("Toggle");
 			playerMove.WakeUp();
 			playerBed.WakeUp();
 			if (!gameOver)
@@ -115,6 +115,8 @@ public class GameState : MonoBehaviour {
 	public void UpgradeBed(BedBuilding nextLevel) {
 		CurrentLevel = nextLevel.awardsLevel;
 		playerBed.Upgrade(nextLevel);
+		Inventory.instance.maxHealth = nextLevel.maxHealth;
+		Inventory.instance.heal();
 
 		if (!gameOver) {
 			if (CurrentLevel == 6) {
@@ -136,6 +138,7 @@ public class GameState : MonoBehaviour {
 
 	public void Victory() {
 		gameOver = true;
+		inventoryCanvas.statsObject.SetActive(false);
 		buildBarAnim.SetTrigger("Toggle");
 
 		playerMove.enabled = false;
@@ -163,6 +166,8 @@ public class GameState : MonoBehaviour {
 			badHouse.SetActive(true);
 			PlayerPrefs.SetInt("RITUAL", 1);
 		});
+		seq.AppendInterval(1f);
+		seq.Append(inventoryCanvas.foolTextGroup.DOFade(1f, 1.5f));
 		seq.AppendInterval(3f);
 		seq.AppendCallback(() => {
 			inventoryCanvas.gameObject.SetActive(true);
