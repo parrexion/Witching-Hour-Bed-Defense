@@ -7,6 +7,7 @@ using UnityEditor;
 
 public class MapTileVisual : MonoBehaviour {
 
+	public MapCreator mapCreator;
 	public int x, y;
 	public SpriteRenderer tileSprite;
 	public GameObject building;
@@ -16,7 +17,8 @@ public class MapTileVisual : MonoBehaviour {
 	public bool alwaysBlocked;
 
 
-	public void SetPos(int x, int y) {
+	public void SetPos(MapCreator creator, int x, int y) {
+		mapCreator = creator;
 		this.x = x;
 		this.y = y;
 	}
@@ -49,6 +51,10 @@ public class MapTileVisual : MonoBehaviour {
 			}
 			building = Instantiate(currentBuilding.prefab, transform.position, Quaternion.identity, transform);
 		}
+	}
+
+	public void RemoveBuilding() {
+		GetComponentInParent<MapCreator>().RemoveBuilding(x, y);
 	}
 }
 

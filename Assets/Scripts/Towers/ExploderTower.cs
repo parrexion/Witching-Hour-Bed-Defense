@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ExploderTower : MonoBehaviour {
 
-
     public Exploder exploder;
+
+    private MapTileVisual visual;
     private List<EnemyHealth> enemiesNearby = new List<EnemyHealth>();
 
-    public void explode() {
+	private void Start() {
+        visual = GetComponentInParent<MapTileVisual>();
+	}
+
+	public void explode() {
         setEnemiesNearby();
         for(int i = enemiesNearby.Count-1; i >= 0; i--) {
             enemiesNearby[i].DamageEnemy(exploder.damage);
         }
+        visual.RemoveBuilding();
         Destroy(gameObject);
     }
     private void setEnemiesNearby() {
