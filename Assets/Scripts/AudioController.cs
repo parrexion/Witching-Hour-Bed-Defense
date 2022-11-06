@@ -71,7 +71,7 @@ public class AudioController : MonoBehaviour {
 		Sequence seq = DOTween.Sequence();
 		seq.Append(musicSources[1].DOFade(0f, fadeSpeed * 0.5f));
 		seq.InsertCallback(fadeSpeed * 0.5f, () => {
-			musicSources[1].Pause();
+			musicSources[1].Stop();
 			musicSources[0].volume = 0f;
 			musicSources[0].Play();
 		});
@@ -92,5 +92,10 @@ public class AudioController : MonoBehaviour {
 
 	public void PlaySfx(SFX sfx) {
 		sfxSource.PlayOneShot(library.GetSfx(sfx));
+	}
+
+	public void StopMusic() {
+		musicSources[0].Stop();
+		musicSources[1].Stop();
 	}
 }

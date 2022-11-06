@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 4098233521430562824, guid: ff4674e30eb1d9e41a34fb2113d37e22, type: 3}
   blocking: 1
   label: Jam shooter 3
-  desc: Pew pew 3
+  desc: Rapid-fire jam blobs
   sprite: {fileID: 21300000, guid: 0404c98d68fa3da419b5a8adb092f606, type: 3}
   unlockLevel: 4
   removeLevel: 99

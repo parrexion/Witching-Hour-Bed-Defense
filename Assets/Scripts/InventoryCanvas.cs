@@ -23,7 +23,6 @@ public class InventoryCanvas : MonoBehaviour {
 	public GameObject winObj;
 	public ImageAnimator gameOverAnimator;
 	public GameObject gameOverButtons;
-	public TextMeshProUGUI victoryText;
 
 
 	private void Start() {
@@ -70,6 +69,10 @@ public class InventoryCanvas : MonoBehaviour {
 
 	public void ClickDayButton() {
 		GameState.instance.ToggleDay();
+	}
+
+	public void ClickVictoryButton() {
+		GameState.instance.Victory();
 	}
 	
 	public void GoToMainButton() {

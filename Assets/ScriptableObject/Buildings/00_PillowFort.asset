@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 8687454195290242821, guid: c8adf16e7a0768144bcec389b9b5affb, type: 3}
   blocking: 1
   label: Pillow Fort
-  desc: Basic defensive building
+  desc: Blocks the path
   sprite: {fileID: 21300000, guid: 1fbe79aa2b844334e9072d4537df28b5, type: 3}
   unlockLevel: 0
   removeLevel: 99

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ExploderRange : MonoBehaviour {
 
-        public ExploderTower exploder;
-        
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Enemy") {
-            exploder.explode();
-        }
-    }
+	public ExploderTower exploder;
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag("Enemy")) {
+			exploder.explode();
+		}
+	}
 
 }

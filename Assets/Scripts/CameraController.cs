@@ -70,6 +70,15 @@ public class CameraController : MonoBehaviour {
 		}
 	}
 
+	public void Shake() {
+		Sequence seq = DOTween.Sequence();
+		seq.Append(cam.DOOrthoSize(bedCamSize, zoomOutSpeed));
+		seq.Join(transform.DOMove(bed.position + offset, zoomOutSpeed));
+		seq.Append(cam.DOShakePosition(3f, 1f, 5, fadeOut: false));
+		seq.AppendInterval(1f);
+		seq.Append(cam.DOShakePosition(3f, 3f, 10, fadeOut: false));
+	}
+
 	private void ZoomOut() {
 		cam.DOOrthoSize(bedCamSize, zoomOutSpeed);
 		transform.DOMove(bed.position + offset, zoomOutSpeed);

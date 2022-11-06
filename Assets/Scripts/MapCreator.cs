@@ -62,6 +62,10 @@ public class MapCreator : MonoBehaviour {
 		}
 	}
 
+	public void RemoveBuilding(int x, int y) {
+		GetTile(x, y).AddBuilding(null);
+	}
+
 
 	public void CreateMapEditor() {
 		if (mapVisuals != null) {
@@ -85,7 +89,7 @@ public class MapCreator : MonoBehaviour {
 					map[pos].AddNeighbour(Direction.WEST, map[pos - 1]);
 				mapVisuals[pos] = Instantiate(tilePrefab, transform);
 				mapVisuals[pos].transform.position = new Vector3(x * tileSize.x, y * tileSize.y, 0);
-				mapVisuals[pos].SetPos(x, y);
+				mapVisuals[pos].SetPos(this, x, y);
 				mapVisuals[pos].SetBuilding(map[pos]);
 				map[pos].onBuildingChanged += mapVisuals[pos].SetBuilding;
 				pos++;
