@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InventoryCanvas : MonoBehaviour {
 
@@ -17,6 +18,9 @@ public class InventoryCanvas : MonoBehaviour {
 
 	[Header("Game over")]
 	public GameObject gameOverBlocker;
+	public GameObject gameOverArea;
+	public ImageAnimator gameOverAnimator;
+	public GameObject gameOverButtons;
 	public TextMeshProUGUI victoryText;
 
 
@@ -29,7 +33,10 @@ public class InventoryCanvas : MonoBehaviour {
 			Debug.LogError("Wrong spawn order for the inventory!");
 		}
 		gameOverBlocker.SetActive(false);
+		gameOverArea.SetActive(false);
+		gameOverButtons.SetActive(false);
 
+		gameOverAnimator.onAnimationFinished += GameOverAnimFinished;
 		GameState.instance.onDayChanged += SetDayState;
 		GameState.instance.onGameOver += GameOver;
 	}
@@ -66,5 +73,13 @@ public class InventoryCanvas : MonoBehaviour {
 
 	public void ClickDayButton() {
 		GameState.instance.ToggleDay();
+	}
+	
+	public void GoToMainButton() {
+		SceneManager.LoadScene("MainMenuScene");
+	}
+
+	private void GameOverAnimFinished() {
+		gameOverButtons.SetActive(true);
 	}
 }
