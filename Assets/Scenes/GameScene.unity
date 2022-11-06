@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1745308794}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: inventoryCanvas
+      value: 
+      objectReference: {fileID: 1262296489}
     - target: {fileID: 1059255328633656745, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1690,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8223372965407860262, guid: 31597583fe8ebf246bda9e956fcb4bb1, type: 3}
+      propertyPath: transitionSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31597583fe8ebf246bda9e956fcb4bb1, type: 3}
 --- !u!1 &1080510028
@@ -1760,6 +1768,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262296489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6390252106947583181, guid: f5aaef83bf7c9d94d83b3bc2beb54d4e, type: 3}
+  m_PrefabInstance: {fileID: 1937420028273998816}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e39dda56647433388d0ea92f927b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1269660582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7947507156966545085, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}

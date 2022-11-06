@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class CameraController : MonoBehaviour {
 
-	[SerializeField] private Camera cam;
+	public Camera cam;
 	[SerializeField] private Vector3 offset;
 	[SerializeField] private Vector2 clampOffset;
 	[SerializeField] private float followCamSize;
@@ -70,13 +70,18 @@ public class CameraController : MonoBehaviour {
 		}
 	}
 
-	public void Shake() {
+	public Sequence ShakeFirst() {
+		AudioController.instance.StopMusic();
+		AudioController.instance.PlaySfx(SFX.TRANSITION);
 		Sequence seq = DOTween.Sequence();
 		seq.Append(cam.DOOrthoSize(bedCamSize, zoomOutSpeed));
 		seq.Join(transform.DOMove(bed.position + offset, zoomOutSpeed));
-		seq.Append(cam.DOShakePosition(3f, 1f, 5, fadeOut: false));
-		seq.AppendInterval(1f);
-		seq.Append(cam.DOShakePosition(3f, 3f, 10, fadeOut: false));
+		seq.Append(cam.DOShakePosition(2f, 0.8f, 5, fadeOut: false));
+		return seq;
+	}
+
+	public Tween Shake(float duration, float strength, int vibrato) {
+		return cam.DOShakePosition(duration, strength, vibrato, fadeOut: false);
 	}
 
 	private void ZoomOut() {

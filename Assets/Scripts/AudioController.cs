@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Music { MAINMENU, DAY, NIGHT, }
-public enum SFX { TRANSITION, PICKUP, BUTTON, DAMAGE, }
+public enum SFX { TRANSITION, TRANSITION_LONG, DAMAGE, BUTTON, }
 
 public class AudioController : MonoBehaviour {
 

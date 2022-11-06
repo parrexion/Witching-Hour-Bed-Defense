@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour {
 
@@ -17,11 +18,13 @@ public class GameState : MonoBehaviour {
 
 	[Header("References")]
 	public CameraController cameraController;
+	public InventoryCanvas inventoryCanvas;
 	public Light2D daylight;
 	public Light2D nightlight;
 	public MapCreator mapCreator;
 	public EnemySpawner enemySpawner;
 	public Animator buildBarAnim;
+	public GameObject badHouse;
 
 	[Header("Settings")]
 	public float toggleTime = 1f;
@@ -46,6 +49,8 @@ public class GameState : MonoBehaviour {
 		playerBuild = playerMove.GetComponent<PlayerBuilder>();
 		playerBed = mapCreator.GetBed();
 		enemySpawner.onWaveFinished += WaveFinished;
+
+		badHouse.SetActive(false);
 
 		SetDay(true);
 	}
@@ -131,14 +136,41 @@ public class GameState : MonoBehaviour {
 
 	public void Victory() {
 		gameOver = true;
-		AudioController.instance.StopMusic();
-		AudioController.instance.PlaySfx(SFX.TRANSITION);
+		buildBarAnim.SetTrigger("Toggle");
 
 		playerMove.enabled = false;
 		playerBuild.enabled = false;
 		cameraController.enabled = false;
 
-		cameraController.Shake();
+		Sequence seq = cameraController.ShakeFirst();
+		seq.AppendInterval(1f);
+		seq.AppendCallback(() => {
+			inventoryCanvas.flicker.color = Color.black;
+			inventoryCanvas.flicker.gameObject.SetActive(true);
+		});
+		seq.Append(inventoryCanvas.flicker.DOFade(0f, 1f).SetEase(Ease.Flash, 9, 1));
+		seq.AppendInterval(1f);
+		seq.AppendCallback(() => {
+			inventoryCanvas.flicker.color = Color.black;
+			AudioController.instance.PlaySfx(SFX.TRANSITION_LONG);
+		});
+		seq.Append(cameraController.Shake(3, 1.6f, 10));
+		seq.Join(inventoryCanvas.flicker.DOFade(0f, 3f).SetEase(Ease.Flash, 8, -1));
+		seq.AppendInterval(1f);
+		seq.AppendCallback(() => {
+			inventoryCanvas.gameObject.SetActive(false);
+			cameraController.cam.orthographicSize = 18f;
+			badHouse.SetActive(true);
+			PlayerPrefs.SetInt("RITUAL", 1);
+		});
+		seq.AppendInterval(3f);
+		seq.AppendCallback(() => {
+			inventoryCanvas.gameObject.SetActive(true);
+			Application.Quit();
+#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+#endif
+		});
 
 		//onGameOver?.Invoke(true);
 	}

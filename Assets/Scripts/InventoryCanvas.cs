@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InventoryCanvas : MonoBehaviour {
 
 	[Header("Day/Night")]
+	public GameObject timeDebugObject;
 	public TextMeshProUGUI dayText;
 	public TextMeshProUGUI dayButton;
 
@@ -24,8 +26,14 @@ public class InventoryCanvas : MonoBehaviour {
 	public ImageAnimator gameOverAnimator;
 	public GameObject gameOverButtons;
 
+	public Image flicker;
+
 
 	private void Start() {
+#if !UNITY_EDITOR
+		timeDebugObject.SetActive(false);
+#endif
+
 		if (Inventory.instance != null) {
 			SetStats();
 			Inventory.instance.onInventoryUpdated += SetStats;
@@ -36,6 +44,8 @@ public class InventoryCanvas : MonoBehaviour {
 		gameOverBlocker.SetActive(false);
 		gameOverArea.SetActive(false);
 		gameOverButtons.SetActive(false);
+		flicker.color = Color.clear;
+		flicker.gameObject.SetActive(false);
 
 		gameOverAnimator.onAnimationFinished += GameOverAnimFinished;
 		GameState.instance.onDayChanged += SetDayState;
