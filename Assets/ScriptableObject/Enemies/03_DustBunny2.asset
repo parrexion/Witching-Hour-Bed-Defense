@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 03_DustBunny2
   m_EditorClassIdentifier: 
   maxHealth: 15
-  damage: 10
+  damage: 25
   attackDelay: 0.5
   moveSpeed: 3
   dropWood: 12

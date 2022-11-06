@@ -44,6 +44,9 @@ public class Inventory : MonoBehaviour {
 
 	public void removeHealth(float damage) {
 		health = Math.Max(health - damage, 0);
+		if(health == 0) {
+			GameState.instance.ShowGameOver();
+		}
 		onInventoryUpdated?.Invoke();
 	}
 

@@ -19,6 +19,8 @@ public class InventoryCanvas : MonoBehaviour {
 	[Header("Game over")]
 	public GameObject gameOverBlocker;
 	public GameObject gameOverArea;
+	public GameObject gameOverObj;
+	public GameObject winObj;
 	public ImageAnimator gameOverAnimator;
 	public GameObject gameOverButtons;
 	public TextMeshProUGUI victoryText;
@@ -61,13 +63,8 @@ public class InventoryCanvas : MonoBehaviour {
 	}
 
 	private void GameOver(bool isVictory) {
-		if (isVictory) {
-			victoryText.text = "VICTORY!";
-		}
-		else {
-			victoryText.text = "GAME OVER!";
-		}
-
+		gameOverObj.SetActive(!isVictory);
+		winObj.SetActive(isVictory);
 		gameOverBlocker.SetActive(true);
 	}
 

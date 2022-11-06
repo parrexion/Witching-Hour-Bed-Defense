@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01_Ghost
   m_EditorClassIdentifier: 
   maxHealth: 7.5
-  damage: 5
+  damage: 10
   attackDelay: 0.5
   moveSpeed: 5
   dropWood: 8
