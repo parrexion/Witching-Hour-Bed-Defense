@@ -2299,6 +2299,30 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1062487677}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: dayMessages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: dayMessages.Array.data[0]
+      value: Maybe you should upgrade the bed...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: dayMessages.Array.data[1]
+      value: Place some more towers!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: dayMessages.Array.data[2]
+      value: Don't let them get to me..
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: dayMessages.Array.data[3]
+      value: Don't go to bed until you're ready for the next wave
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059255328633656744, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
+      propertyPath: dayMessages.Array.data[4]
+      value: Upgrade your bed for better towers!
+      objectReference: {fileID: 0}
     - target: {fileID: 1059255328633656745, guid: f8e449e2317733e4d96bc62043fd1c21, type: 3}
       propertyPath: m_RootOrder
       value: 0

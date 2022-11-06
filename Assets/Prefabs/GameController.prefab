@@ -603,6 +603,12 @@ MonoBehaviour:
   buildBarAnim: {fileID: 0}
   toggleTime: 1
   lightAmount: {x: 0.35, y: 1}
+  dayMessages:
+  - Maybe you should upgrade the bed...
+  - Place some more towers!
+  - Don't let them get to me..
+  - Don't go to bed until you're ready for the next wave
+  - Upgrade your bed for better towers!
 --- !u!1 &1404203625132608026
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4218076610238024581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.206667, y: 7.5200005, z: 0}
+  m_LocalPosition: {x: -10.206667, y: 7.6762505, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -800,7 +806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4979759731804750098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.0600002, y: -2.0133333, z: 0}
+  m_LocalPosition: {x: 3.2162502, y: -2.1695833, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2982,63 +2988,21 @@ CompositeCollider2D:
       - X: -60000000
         Y: 110000000
       - X: -60000000
-        Y: 30000100
-      - X: -60000041
-        Y: 30000100
-      - X: -60000100
-        Y: 30000041
-      - X: -60000100
-        Y: -41
-      - X: -60000041
-        Y: -100
-      - X: -60000000
-        Y: -100
-      - X: -60000000
         Y: -30000000
       - X: 240000000
         Y: -30000000
-    - - X: -50000041
-        Y: -10000100
-      - X: -50000100
-        Y: -10000041
-      - X: -50000100
-        Y: -100
-      - X: -49999959
-        Y: -100
-      - X: -49999900
-        Y: -41
-      - X: -49999900
-        Y: 30000041
-      - X: -49999959
-        Y: 30000100
-      - X: -50000100
-        Y: 30000100
-      - X: -50000100
-        Y: 69999959
-      - X: -50000041
-        Y: 69999900
-      - X: -9999959
-        Y: 69999900
-      - X: -9999900
-        Y: 69999959
-      - X: -9999900
-        Y: 80000041
-      - X: -9999959
-        Y: 80000100
-      - X: -10000100
-        Y: 80000100
-      - X: -10000100
-        Y: 160000041
-      - X: -10000041
-        Y: 160000100
-      - X: 220000041
-        Y: 160000100
-      - X: 220000100
-        Y: 160000041
-      - X: 220000100
-        Y: -10000041
-      - X: 220000041
-        Y: -10000100
+    - - X: -50000000
+        Y: -10000000
+      - X: -50000000
+        Y: 70000000
+      - X: -10000000
+        Y: 70000000
+      - X: -10000000
+        Y: 160000000
+      - X: 220000000
+        Y: 160000000
+      - X: 220000000
+        Y: -10000000
   m_CompositePaths:
     m_Paths:
     - - {x: 23.999971, y: -3}
@@ -3053,12 +3017,12 @@ CompositeCollider2D:
       - {x: -3.0000293, y: 11}
       - {x: -6, y: 10.99997}
       - {x: -5.999971, y: -3}
-    - - {x: 22.00001, y: -0.9999747}
-      - {x: -5.00001, y: -0.9999747}
-      - {x: -4.9999747, y: 6.9999905}
-      - {x: -0.99999, y: 7.0000257}
-      - {x: -0.9999747, y: 16.00001}
-      - {x: 22.00001, y: 15.999974}
+    - - {x: 22, y: -0.9999706}
+      - {x: -5, y: -0.9999706}
+      - {x: -4.9999704, y: 7}
+      - {x: -1, y: 7.0000296}
+      - {x: -0.9999706, y: 16}
+      - {x: 22, y: 15.999971}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!1 &6569041051225588424
@@ -3341,7 +3305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8263740801212643500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2800001, y: 7.413334, z: 0}
+  m_LocalPosition: {x: 1.2800001, y: 7.725834, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3538,15 +3502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938438, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: startWood
-      value: 20
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938438, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: startCandy
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938438, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: startFluff
-      value: 15
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938439, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: m_RootOrder

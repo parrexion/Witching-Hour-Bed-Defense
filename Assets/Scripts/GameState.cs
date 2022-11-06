@@ -27,6 +27,8 @@ public class GameState : MonoBehaviour {
 	public float toggleTime = 1f;
 	public Vector2 lightAmount = new Vector2(0.25f, 1f);
 
+	public List<string> dayMessages = new List<string>();
+
 	private PlayerMovement playerMove;
 	private PlayerBuilder playerBuild;
 	private PlayerBed playerBed;
@@ -49,6 +51,7 @@ public class GameState : MonoBehaviour {
 	}
 
 	private void SetDay(bool firstStart = false) {
+		ChatBubble.instance.displayMessage(dayMessages[Random.Range(0, dayMessages.Count)]);
 		Inventory.instance.heal();
 		buildBarAnim.SetTrigger("Toggle");
 		isDay = true;
