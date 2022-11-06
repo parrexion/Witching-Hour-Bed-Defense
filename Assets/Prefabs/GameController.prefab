@@ -3502,15 +3502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938438, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: startWood
-      value: 2000
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938438, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: startCandy
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938438, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: startFluff
-      value: 1500
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6241237694081938439, guid: c703e0b1f29c9964b8e06af5782c2c7f, type: 3}
       propertyPath: m_RootOrder
