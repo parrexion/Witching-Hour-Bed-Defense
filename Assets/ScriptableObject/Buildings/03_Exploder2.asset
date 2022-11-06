@@ -18,7 +18,7 @@ MonoBehaviour:
   desc: Explodes when an enemy is nearby
   sprite: {fileID: 21300000, guid: 8df6d95e680897b49ae1a0347f82da5e, type: 3}
   unlockLevel: 3
-  removeLevel: 99
+  removeLevel: 5
   woodCost: 0
   fluffCost: 5
   candyCost: 5
