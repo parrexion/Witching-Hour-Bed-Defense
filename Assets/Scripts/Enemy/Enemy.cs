@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private EnemyObj enemyData;
 	public EnemyHealth enemyHealth;
 	public AIDestinationSetter destination;
+	public AIBase aiBase;
 	public ItemPickUp dropWoodPrefab;
 	public ItemPickUp dropFluffPrefab;
 	public ItemPickUp dropCandyPrefab;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour {
 
 
 	private void Start() {
+		aiBase.maxSpeed = enemyData.moveSpeed;
 		enemyHealth.SetData(enemyData);
 		enemyHealth.onDeath += Die;
 	}

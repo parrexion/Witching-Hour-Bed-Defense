@@ -15,7 +15,7 @@ MonoBehaviour:
   spawns:
   - {fileID: 11400000, guid: 0e681bfd786812240bfeb3e2ee45fdc2, type: 2}
   - {fileID: 11400000, guid: 7c5330288d0636541b4236197f991b57, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d91e8879f895b7743bef10050b6948bd, type: 2}
   - {fileID: 11400000, guid: 7c5330288d0636541b4236197f991b57, type: 2}
   - {fileID: 11400000, guid: 0e681bfd786812240bfeb3e2ee45fdc2, type: 2}
   delay: 2

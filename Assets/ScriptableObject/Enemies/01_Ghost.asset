@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d639afea7e1ec5544963906106e51611, type: 3}
-  m_Name: 00_DefaultEnemy
+  m_Name: 01_Ghost
   m_EditorClassIdentifier: 
-  maxHealth: 25
-  damage: 20
+  maxHealth: 7.5
+  damage: 5
   attackDelay: 0.5
-  moveSpeed: 3
-  dropWood: 0
-  dropFluff: 0
-  dropCandy: 0
+  moveSpeed: 5
+  dropWood: 12
+  dropFluff: 6
+  dropCandy: 5

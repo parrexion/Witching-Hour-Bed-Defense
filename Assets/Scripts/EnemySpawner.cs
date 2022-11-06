@@ -59,12 +59,10 @@ public class EnemySpawner : MonoBehaviour {
 		currentWaveStage = 0;
 		while (currentWaveStage < waves[currentWaveLevel].spawns.Count) {
 			WaveSpawn currentSpawn = waves[currentWaveLevel].spawns[currentWaveStage];
-			if(currentSpawn != null) {
-				for (int i = 0; i < currentSpawn.amount; i++) {
-					int index = Random.Range(0, spawnPoints.Count);
-					Vector3 spawnPos = spawnPoints[index].position;
-					SpawnEnemy(currentSpawn.enemy, spawnPos);
-				}
+			for (int i = 0; i < currentSpawn.amount; i++) {
+				int index = Random.Range(0, spawnPoints.Count);
+				Vector3 spawnPos = spawnPoints[index].position;
+				SpawnEnemy(currentSpawn.enemy, spawnPos);
 			}
 			currentWaveStage++;
 			yield return new WaitForSeconds(waves[currentWaveLevel].delay);
@@ -100,7 +98,7 @@ public class EnemySpawner : MonoBehaviour {
 	private void CleanUpEnemy(Enemy enemy) {
 		enemies.Remove(enemy);
 		totalEnemies--;
-
+		Debug.Log(totalEnemies + " enemies left");
 		if (totalEnemies == 0) {
 			StartCoroutine(DelayedWaveFinished());
 		}
