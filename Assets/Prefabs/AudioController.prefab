@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 8223372965407860263}
   - {fileID: 8223372965407860260}
   sfxSource: {fileID: 8223372965407860261}
-  fadeSpeed: 1
+  fadeSpeed: 2
 --- !u!82 &8223372965407860263
 AudioSource:
   m_ObjectHideFlags: 0
