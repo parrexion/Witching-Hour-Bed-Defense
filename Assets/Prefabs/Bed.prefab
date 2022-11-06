@@ -902,6 +902,8 @@ MonoBehaviour:
   - Nice tower placement Einstein...
   - HEY, WATCH IT!
   - STOP THEM!
+  - That hurt!
+  - Keep them away from me!!!!!!!
 --- !u!50 &6347059935295240473
 Rigidbody2D:
   serializedVersion: 4
