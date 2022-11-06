@@ -5,12 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class MapTile {
 
-	public System.Action<Building> onBuildingChanged;
+	public System.Action<MapTile> onBuildingChanged;
 	public int x, y;
 	public Building currentBuilding;
 	[System.NonSerialized] public MapTile[] neighbours = new MapTile[4];
 
-	public bool Blocked => currentBuilding != null;
+	public bool alwaysBlocked;
+	public bool Blocked => currentBuilding != null || alwaysBlocked;
 
 
 	public MapTile (int x, int y) {
@@ -29,11 +30,11 @@ public class MapTile {
 
 	public void AddBuilding(Building building) {
 		currentBuilding = building;
-		onBuildingChanged?.Invoke(building);
+		onBuildingChanged?.Invoke(this);
 	}
 
-	public void SetBed(BedBuilding bed) {
-		currentBuilding = bed;
-		onBuildingChanged?.Invoke(bed);
+	public void SetAlwaysBlocked(bool blocked) {
+		alwaysBlocked = blocked;
+		onBuildingChanged?.Invoke(this);
 	}
 }

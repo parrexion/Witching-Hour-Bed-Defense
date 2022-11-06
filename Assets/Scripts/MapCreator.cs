@@ -21,6 +21,9 @@ public class MapCreator : MonoBehaviour {
 	public PlayerBed bedPrefab;
 	public BedBuilding bedBuilding;
 
+	[Header("Blocked list")]
+	public List<int> blockedArea = new List<int>();
+
 	private PlayerMovement player;
 	private PlayerBed bed;
 	[SerializeField] private MapTile[] map = null;
@@ -33,9 +36,14 @@ public class MapCreator : MonoBehaviour {
 		}
 		else {
 			int pos = 0;
+			int area = 0;
 			for (int y = 0; y < MaxSize.y; y++) {
 				for (int x = 0; x < MaxSize.x; x++) {
 					map[pos].onBuildingChanged += mapVisuals[pos].SetBuilding;
+					if (area < blockedArea.Count && blockedArea[area] == pos) {
+						map[pos].SetAlwaysBlocked(true);
+						area++;
+					}
 					pos++;
 				}
 			}
@@ -49,7 +57,7 @@ public class MapCreator : MonoBehaviour {
 		for (int y = MaxSize.y / 2 - 1, target = MaxSize.y / 2 + 1; y < target; y++) {
 			for (int x = MaxSize.x / 2 - 1, target2 = MaxSize.x / 2 + 1; x < target2; x++) {
 				MapTile tile = GetTile(x, y);
-				tile.SetBed(bedBuilding);
+				tile.SetAlwaysBlocked(true);
 			}
 		}
 	}
@@ -77,7 +85,8 @@ public class MapCreator : MonoBehaviour {
 					map[pos].AddNeighbour(Direction.WEST, map[pos - 1]);
 				mapVisuals[pos] = Instantiate(tilePrefab, transform);
 				mapVisuals[pos].transform.position = new Vector3(x * tileSize.x, y * tileSize.y, 0);
-				mapVisuals[pos].SetBuilding(null);
+				mapVisuals[pos].SetPos(x, y);
+				mapVisuals[pos].SetBuilding(map[pos]);
 				map[pos].onBuildingChanged += mapVisuals[pos].SetBuilding;
 				pos++;
 			}
@@ -93,6 +102,15 @@ public class MapCreator : MonoBehaviour {
 			mapVisuals[i].SetBuildMode(active);
 		}
 	}
+
+	public MapTile SetAlwaysBlocked(int x, int y, bool blocked) {
+		MapTile tile = GetTile(x, y);
+		tile.alwaysBlocked = blocked;
+		map[GetIndex(x, y)] = tile;
+		Debug.Log("Blocked" + map[GetIndex(x, y)].alwaysBlocked);
+		return tile;
+	}
+
 	public PlayerBed GetBed() {
 		return bed;
 	}
