@@ -70,6 +70,11 @@ public class GameState : MonoBehaviour {
 		if (!firstStart) {
 			playerMove.WakeUp();
 			playerBed.WakeUp();
+			if (!gameOver)
+				AudioController.instance.PlayMusicTransitionToDay();
+		}
+		else {
+			AudioController.instance.PlayMusic(Music.DAY, true);
 		}
 	}
 
@@ -91,6 +96,8 @@ public class GameState : MonoBehaviour {
 		enemySpawner.SendWave();
 		playerMove.GoToBed();
 		playerBed.GoToSleep();
+
+		AudioController.instance.PlayMusicTransitionToNight();
 	}
 
 	public void ToggleDay() {
@@ -117,6 +124,7 @@ public class GameState : MonoBehaviour {
 	public void ShowGameOver() {
 		if (!gameOver) {
 			gameOver = true;
+			AudioController.instance.PlayMusicTransitionToDay();
 			onGameOver?.Invoke(false);
 		}
 	}

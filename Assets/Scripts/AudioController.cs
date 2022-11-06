@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Music { MAINMENU, DAY, NIGHT, }
-public enum SFX { PICKUP, BUTTON, DAMAGE, }
+public enum SFX { TRANSITION, PICKUP, BUTTON, DAMAGE, }
 
 public class AudioController : MonoBehaviour {
 
@@ -16,6 +16,7 @@ public class AudioController : MonoBehaviour {
 		else {
 			instance = this;
 			DontDestroyOnLoad(gameObject);
+			SetupMusic();
 		}
 	}
 
@@ -25,9 +26,15 @@ public class AudioController : MonoBehaviour {
 
 	[Header("Settings")]
 	public float fadeSpeed = 1f;
+	public float transitionSpeed = 0.5f;
 
 	private float musicVolume = 1f;
 
+
+	public void SetupMusic() {
+		musicSources[0].clip = library.GetMusic(Music.DAY);
+		musicSources[1].clip = library.GetMusic(Music.NIGHT);
+	}
 
 	public void SetMusicVolume(float volume) {
 		musicVolume = volume;
@@ -42,7 +49,7 @@ public class AudioController : MonoBehaviour {
 
 	public void PlayMusic(Music music, bool withFade = false) {
 		musicSources[0].volume = musicVolume;
-		musicSources[0].clip = library.GetMusic(music);
+		//musicSources[0].clip = library.GetMusic(music);
 		musicSources[0].Play();
 		if (withFade) {
 			musicSources[0].volume = 0f;
@@ -59,18 +66,28 @@ public class AudioController : MonoBehaviour {
 		seq.Append(musicSources[0].DOFade(musicVolume, fadeSpeed));
 	}
 
-	public void PlayMusicWithTransition(Music music, Music transition) {
-		AudioClip musicClip = library.GetMusic(music);
-		AudioClip transitionClip = library.GetMusic(transition);
-		musicSources[1].clip = transitionClip;
-		musicSources[1].Play();
+	public void PlayMusicTransitionToDay() {
+		//PlaySfx(SFX.TRANSITION);
 		Sequence seq = DOTween.Sequence();
-		seq.Append(musicSources[0].DOFade(0f, fadeSpeed));
-		seq.InsertCallback(transitionClip.length, () => {
-			musicSources[0].clip = musicClip;
+		seq.Append(musicSources[1].DOFade(0f, fadeSpeed * 0.5f));
+		seq.InsertCallback(fadeSpeed * 0.5f, () => {
+			musicSources[1].Pause();
+			musicSources[0].volume = 0f;
 			musicSources[0].Play();
 		});
 		seq.Append(musicSources[0].DOFade(musicVolume, fadeSpeed));
+	}
+
+	public void PlayMusicTransitionToNight() {
+		PlaySfx(SFX.TRANSITION);
+		Sequence seq = DOTween.Sequence();
+		seq.Append(musicSources[0].DOFade(0f, fadeSpeed));
+		seq.InsertCallback(transitionSpeed, () => {
+			musicSources[0].Pause();
+			musicSources[1].volume = 0f;
+			musicSources[1].Play();
+		});
+		seq.Append(musicSources[1].DOFade(musicVolume, fadeSpeed));
 	}
 
 	public void PlaySfx(SFX sfx) {
