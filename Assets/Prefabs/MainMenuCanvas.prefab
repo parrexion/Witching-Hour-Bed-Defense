@@ -3297,7 +3297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 804776546639135857}
+  musicSlider2: {fileID: 1788140891120232672}
   volumeText: {fileID: 8481370567034057249}
+  volumeText2: {fileID: 4359461354286980986}
   fadeOutImage: {fileID: 1933318660750564803}
   fadeSpeed: 3
   niceMenu: {fileID: 5668719242221828055}

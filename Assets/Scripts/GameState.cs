@@ -166,11 +166,11 @@ public class GameState : MonoBehaviour {
 			badHouse.SetActive(true);
 			PlayerPrefs.SetInt("RITUAL", 1);
 		});
-		seq.AppendInterval(1f);
+		seq.AppendInterval(3f);
+		seq.AppendCallback(() => inventoryCanvas.gameObject.SetActive(true));
 		seq.Append(inventoryCanvas.foolTextGroup.DOFade(1f, 1.5f));
 		seq.AppendInterval(3f);
 		seq.AppendCallback(() => {
-			inventoryCanvas.gameObject.SetActive(true);
 			Application.Quit();
 #if UNITY_EDITOR
 			UnityEditor.EditorApplication.isPlaying = false;

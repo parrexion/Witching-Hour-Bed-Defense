@@ -8,7 +8,9 @@ using DG.Tweening;
 public class MainMenuController : MonoBehaviour {
 
 	public Slider musicSlider;
+	public Slider musicSlider2;
 	public TMPro.TextMeshProUGUI volumeText;
+	public TMPro.TextMeshProUGUI volumeText2;
 	public Image fadeOutImage;
 	public float fadeSpeed = 3f;
 
@@ -27,6 +29,7 @@ public class MainMenuController : MonoBehaviour {
 		evilMenu.SetActive(ritual != 0);
 
 		musicSlider.value = 10;
+		musicSlider2.value = 10;
 		StartCoroutine(DelayedMusic());
 		fadeOutImage.gameObject.SetActive(false);
 
@@ -56,14 +59,15 @@ public class MainMenuController : MonoBehaviour {
 		AudioController.instance.SetMusicVolume(volume * 0.1f);
 		AudioController.instance.SetSfxVolume(volume * 0.1f);
 		volumeText.text = volume.ToString();
+		volumeText2.text = volume.ToString();
 	}
 
 	public void ExitGame() {
 #if UNITY_STANDALONE
 		Application.Quit();
+#endif
 #if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
-#endif
 #endif
 	}
 }
