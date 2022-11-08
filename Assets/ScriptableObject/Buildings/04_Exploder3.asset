@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146d213a3f1150f4a882523dcc8142ce, type: 3}
   m_Name: 04_Exploder3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8687454195290242821, guid: 90cc8f321ff8d6343a0f06325ac4f878, type: 3}
+  prefab: {fileID: 229439513566741649, guid: cad427524a5f93d44bada617711d1b2c, type: 3}
   blocking: 1
   label: Big explode bunny
   desc: Explodes when an enemy is nearby

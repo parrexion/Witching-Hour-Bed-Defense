@@ -19,8 +19,6 @@ public class Enemy : MonoBehaviour {
 	public Canvas healthCanvas;
 
 
-
-
 	private void Start() {
 		aiBase.maxSpeed = enemyData.moveSpeed;
 		enemyHealth.SetData(enemyData);
@@ -51,15 +49,15 @@ public class Enemy : MonoBehaviour {
 	public void Die() {
 		if (enemyData.dropWood > 0) {
 			ItemPickUp pickup = Instantiate(dropWoodPrefab, transform.position, Quaternion.identity);
-			pickup.setAmount((int)Mathf.Round(enemyData.dropWood * Difficulty.diffMult));
+			pickup.setAmount(enemyData.dropWood);
 		}
 		if (enemyData.dropFluff > 0) {
 			ItemPickUp pickup = Instantiate(dropFluffPrefab, transform.position, Quaternion.identity);
-			pickup.setAmount((int)Mathf.Round(enemyData.dropFluff * Difficulty.diffMult));
+			pickup.setAmount(enemyData.dropFluff);
 		}
 		if (enemyData.dropCandy > 0) {
 			ItemPickUp pickup = Instantiate(dropCandyPrefab, transform.position, Quaternion.identity);
-			pickup.setAmount((int)Mathf.Round(enemyData.dropCandy * Difficulty.diffMult));
+			pickup.setAmount(enemyData.dropCandy);
 		}
 		onDestroyed(this); 
 		Destroy(gameObject);

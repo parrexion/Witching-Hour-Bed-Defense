@@ -41,6 +41,7 @@ public class GameState : MonoBehaviour {
 	public bool IsDay => isDay;
 	public int CurrentDay { get; private set; }
 	public int CurrentLevel { get; private set; } = 1;
+	[System.Runtime.InteropServices.DllImport("__Internal")] private static extern void reloadPage();
 
 
 	private void Start() {
@@ -171,7 +172,11 @@ public class GameState : MonoBehaviour {
 		seq.Append(inventoryCanvas.foolTextGroup.DOFade(1f, 1.5f));
 		seq.AppendInterval(3f);
 		seq.AppendCallback(() => {
+#if UNITY_WEBGL
+			reloadPage();
+#else
 			Application.Quit();
+#endif
 #if UNITY_EDITOR
 			UnityEditor.EditorApplication.isPlaying = false;
 #endif
