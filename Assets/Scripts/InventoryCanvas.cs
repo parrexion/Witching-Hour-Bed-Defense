@@ -31,9 +31,9 @@ public class InventoryCanvas : MonoBehaviour {
 
 
 	private void Start() {
-//#if !UNITY_EDITOR
-//		timeDebugObject.SetActive(false);
-//#endif
+#if !UNITY_EDITOR
+		timeDebugObject.SetActive(false);
+#endif
 
 		if (Inventory.instance != null) {
 			SetStats();
